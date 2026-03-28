@@ -1,0 +1,28 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Redirect www → apex (à adapter selon le domaine réel)
+[[redirects]]
+  from = "https://www.roxane-photo.fr/*"
+  to   = "https://roxane-photo.fr/:splat"
+  status = 301
+  force  = true
+
+# SPA fallback — non nécessaire pour Astro static mais inoffensif
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
+
+# Formulaire de contact
+[[plugins]]
+# Aucun plugin requis — Netlify Forms détecte automatiquement data-netlify="true"
+# Le formulaire dans index.astro est déjà correctement balisé.
+
+[dev]
+  command = "npm run dev"
+  port    = 4321
