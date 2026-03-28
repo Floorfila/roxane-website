@@ -1,17 +1,368 @@
 ---
-
+const name = "Roxane";
+const tagline = "Photographe portrait & lifestyle";
+const location = "Paris, France";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={`${name} — ${tagline}. ${location}.`} />
+    <title>{name} — {tagline}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="nav">
+      <a href="/" class="nav-logo">{name}</a>
+      <nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">À propos</a>
+        <a href="#services">Prestations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-img-wrap">
+        <!-- Placeholder image — replace with actual hero photo -->
+        <div class="hero-placeholder"></div>
+      </div>
+      <div class="hero-caption">
+        <p class="hero-tagline">{tagline}</p>
+        <h1 class="hero-name">{name}</h1>
+        <a href="#portfolio" class="cta">Voir le portfolio</a>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="section-title">Portfolio</h2>
+      <div class="grid">
+        {[1,2,3,4,5,6].map((i) => (
+          <div class="grid-item">
+            <div class="grid-placeholder">
+              <span>Photo {i}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-inner">
+        <div class="about-img-wrap">
+          <div class="about-placeholder"></div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title">À propos</h2>
+          <p>
+            Je suis {name}, photographe basée à {location}. Je capture des moments
+            authentiques et des émotions vraies — portrait, lifestyle, et reportages.
+          </p>
+          <p>
+            Mon approche est douce et attentive. Je crée un espace où vous pouvez
+            être entièrement vous-même devant l'objectif.
+          </p>
+          <a href="#contact" class="cta cta--outline">Prendre contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <h2 class="section-title">Prestations</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Portrait</h3>
+          <p>Séance individuelle ou en couple, en studio ou en extérieur.</p>
+        </div>
+        <div class="service-card">
+          <h3>Lifestyle & Famille</h3>
+          <p>Moments du quotidien, complicité, souvenirs qui durent.</p>
+        </div>
+        <div class="service-card">
+          <h3>Reportage</h3>
+          <p>Événements, naissances, petites cérémonies intimes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-sub">Un projet ? Une question ? Écrivez-moi.</p>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Votre nom" required />
+            <input type="email" name="email" placeholder="Votre email" required />
+          </div>
+          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+          <button type="submit" class="cta">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; {new Date().getFullYear()} {name}. Tous droits réservés.</p>
+      <div class="footer-links">
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </footer>
+
+  </body>
 </html>
+
+<style is:global>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-bg: #faf9f7;
+    --color-text: #1a1a18;
+    --color-muted: #6b6860;
+    --color-border: #e2dfd8;
+    --color-accent: #1a1a18;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(250,249,247,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .nav nav {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav nav a {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-muted);
+    transition: color 0.2s;
+  }
+  .nav nav a:hover { color: var(--color-text); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .hero-img-wrap {
+    position: absolute;
+    inset: 0;
+  }
+  .hero-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #d4cfc7 0%, #bab4a8 100%);
+  }
+  .hero-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 3rem;
+    color: #fff;
+  }
+  .hero-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  /* CTA */
+  .cta {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--color-accent);
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  .cta:hover { background: transparent; color: var(--color-accent); }
+  .cta--outline {
+    background: transparent;
+    color: var(--color-accent);
+  }
+  .cta--outline:hover { background: var(--color-accent); color: #fff; }
+
+  /* SECTIONS */
+  section { padding: 6rem 3rem; }
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  /* PORTFOLIO GRID */
+  .portfolio { background: #f0ede8; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .grid-placeholder {
+    aspect-ratio: 4/5;
+    background: #d4cfc7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: transform 0.3s;
+  }
+  .grid-item:hover .grid-placeholder { transform: scale(1.01); }
+
+  /* ABOUT */
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .about-placeholder {
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #d4cfc7 0%, #bab4a8 100%);
+  }
+  .about-text p {
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+    max-width: 38ch;
+  }
+  .about-text .cta { margin-top: 1rem; }
+
+  /* SERVICES */
+  .services { background: #f0ede8; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+  }
+  .service-card {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+  }
+  .service-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  .service-card p { color: var(--color-muted); font-size: 0.9rem; }
+
+  /* CONTACT */
+  .contact-inner { max-width: 640px; }
+  .contact-sub {
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--color-text); }
+  .contact-form textarea { resize: vertical; }
+  .contact-form button { align-self: flex-start; }
+
+  /* FOOTER */
+  .footer {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+  }
+  .footer-links a {
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--color-text); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav { padding: 1rem 1.5rem; }
+    .nav nav { gap: 1rem; }
+    section { padding: 4rem 1.5rem; }
+    .hero-caption { left: 1.5rem; }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
