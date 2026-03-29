@@ -74,20 +74,20 @@ body {
   line-height: 1;
 }
 
-/* Nav scrollée */
-.nav--solid {
+/* Nav scrollée — .nav.nav--solid : deux classes sur le même élément */
+.nav.nav--solid {
   background: rgba(244,240,232,0.95);
   backdrop-filter: blur(10px);
   border-bottom-color: var(--border);
 }
-.nav--solid .nav-logo { color: var(--ink); }
-.nav--solid .nav nav a { color: var(--muted); }
-.nav--solid .nav nav a:hover { color: var(--ink); }
-.nav--solid .lang-switch { border-left-color: var(--border); }
-.nav--solid .lang-link { color: var(--muted); }
-.nav--solid .lang-link:hover { color: var(--ink); }
-.nav--solid .lang-active { color: var(--ink); }
-.nav--solid .lang-dot { color: var(--border); }
+.nav.nav--solid .nav-logo        { color: var(--ink); }
+.nav.nav--solid nav a            { color: var(--ink); }
+.nav.nav--solid nav a:hover      { color: var(--muted); }
+.nav.nav--solid .lang-switch     { border-left-color: var(--border); }
+.nav.nav--solid .lang-link       { color: var(--muted); }
+.nav.nav--solid .lang-link:hover { color: var(--ink); }
+.nav.nav--solid .lang-active     { color: var(--ink); }
+.nav.nav--solid .lang-dot        { color: var(--border); }
 
 /* ── HERO ── */
 .hero {
