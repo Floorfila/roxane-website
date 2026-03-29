@@ -30,7 +30,7 @@ const brand = "Eterna";
       <nav>
         <a href="#portfolio">Portfolio</a>
         <a href="#prestations">Prestations</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -41,9 +41,9 @@ const brand = "Eterna";
       <div class="hero-img" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="hero-specialty">Photographie de mariage et de couple</p>
         <h1 class="hero-brand">{brand}</h1>
-        <p class="hero-tagline">L'instant préservé pour toujours</p>
+        <p class="hero-byline"><span class="by">by</span> <span class="roxane">Roxane</span></p>
+        <p class="hero-specialty">Photographie de mariage et de couple</p>
       </div>
     </section>
 
@@ -53,7 +53,7 @@ const brand = "Eterna";
         <h2 class="title">Portfolio</h2>
       </div>
       <div class="gallery">
-        {Array.from({ length: 8 }).map((_, i) => (
+        {Array.from({ length: 9 }).map((_, i) => (
           <div class="gallery-item">
             <div class={`gallery-ph gallery-ph-${i + 1}`}></div>
           </div>
@@ -146,7 +146,7 @@ const brand = "Eterna";
 
           <div class="form-row">
             <div class="field">
-              <label for="name">Nom</label>
+              <label for="name">Prénom &amp; Nom</label>
               <input id="name" type="text" name="name" required autocomplete="name" />
             </div>
             <div class="field">
@@ -154,19 +154,35 @@ const brand = "Eterna";
               <input id="email" type="email" name="email" required autocomplete="email" />
             </div>
           </div>
-          <div class="field">
-            <label for="project">Projet</label>
-            <select id="project" name="project" required>
-              <option value="" disabled selected>Mariage ou couple ?</option>
-              <option value="mariage">Mariage</option>
-              <option value="couple">Couple</option>
-            </select>
+          <div class="form-row">
+            <div class="field">
+              <label for="phone">Téléphone</label>
+              <input id="phone" type="tel" name="phone" required autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="project">Projet</label>
+              <select id="project" name="project" required>
+                <option value="" disabled selected>Mariage ou couple ?</option>
+                <option value="mariage">Mariage</option>
+                <option value="couple">Couple</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="date">Souhait de date</label>
+              <input id="date" type="text" name="date" required placeholder="ex : printemps 2026" />
+            </div>
+            <div class="field">
+              <label for="lieu">Souhait de lieu</label>
+              <input id="lieu" type="text" name="lieu" required placeholder="ex : Paris, Normandie…" />
+            </div>
           </div>
           <div class="field">
             <label for="message">Message</label>
             <textarea
               id="message" name="message" rows="5" required
-              placeholder="Parlez-moi de votre histoire — votre rencontre, ce qui vous unit, ce que vous voulez garder."
+              placeholder="Parlez-moi de votre histoire."
             ></textarea>
           </div>
           <button type="submit" class="btn">Envoyer</button>
@@ -284,25 +300,34 @@ const brand = "Eterna";
     padding: 0 4rem 5rem;
     color: #f4f0e8;
   }
-  .hero-specialty {
-    font-size: 0.65rem; font-weight: 300;
-    letter-spacing: 0.28em; text-transform: uppercase;
-    color: rgba(244,240,232,0.55);
-    margin-bottom: 0.6rem;
-  }
   .hero-brand {
     font-family: var(--serif);
     font-size: clamp(3.5rem, 9vw, 9rem);
     font-weight: 200; line-height: 0.9;
     letter-spacing: 0.05em; text-transform: uppercase;
     color: #f4f0e8;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-  .hero-tagline {
+  .hero-byline {
     font-family: var(--serif);
-    font-style: italic; font-weight: 200;
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    color: rgba(244,240,232,0.6);
+    font-weight: 200;
+    font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+    color: rgba(244,240,232,0.55);
+    margin-bottom: 1.2rem;
+  }
+  .hero-byline .by {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .hero-byline .roxane {
+    font-style: italic;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .hero-specialty {
+    font-size: 0.62rem; font-weight: 300;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(244,240,232,0.4);
   }
 
   /* ── SECTIONS ── */
@@ -349,8 +374,8 @@ const brand = "Eterna";
   /* ── GALLERY ── */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
   .gallery-item { aspect-ratio: 1 / 1; overflow: hidden; }
   .gallery-ph {
@@ -364,10 +389,11 @@ const brand = "Eterna";
   .gallery-ph-2 { background: #c8c0b4; }
   .gallery-ph-3 { background: #d0c8bc; }
   .gallery-ph-4 { background: #c4bcb0; }
-  .gallery-ph-5 { background: #ccC4b8; }
+  .gallery-ph-5 { background: #ccc4b8; }
   .gallery-ph-6 { background: #beb8ac; }
   .gallery-ph-7 { background: #d2cac0; }
   .gallery-ph-8 { background: #c6beb4; }
+  .gallery-ph-9 { background: #cabfb4; }
 
   /* ── PRESTATIONS ── */
   .presta-grid {
@@ -498,25 +524,19 @@ const brand = "Eterna";
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 1024px) {
-    .gallery { grid-template-columns: repeat(3, 1fr); }
-  }
-
   @media (max-width: 860px) {
     .nav { padding: 1.2rem 2rem; }
-    .section, .contact-wrap { padding-left: 2rem; padding-right: 2rem; }
     .section { padding: 5rem 2rem; }
     .hero-content { padding: 0 2rem 4rem; }
-    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .presta-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .footer { padding: 1.5rem 2rem; flex-wrap: wrap; gap: 0.75rem; }
-    .footer-copy { order: 3; flex-basis: 100%; text-align: center; }
+    .footer { padding: 1.5rem 2rem; }
   }
 
   @media (max-width: 540px) {
     .nav nav { display: none; }
-    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .form-row { grid-template-columns: 1fr; }
     .hero-brand { letter-spacing: 0.02em; }
   }
