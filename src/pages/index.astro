@@ -12,9 +12,9 @@ const brand = "Eterna";
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Eterna — Photographie de mariage & couples. L'instant préservé pour toujours."
+      content="Eterna — Photographie de mariage et de couple. L'instant préservé pour toujours."
     />
-    <title>{brand} — Photographie de mariage & couples</title>
+    <title>{brand} — Photographie de mariage et de couple</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,67 +29,114 @@ const brand = "Eterna";
       <a href="/" class="nav-logo">{brand}</a>
       <nav>
         <a href="#portfolio">Portfolio</a>
+        <a href="#prestations">Prestations</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-phrase">
-        <span class="phrase-1">L'instant</span>
-        <span class="phrase-2">préservé pour toujours.</span>
+    <section class="hero" aria-label="Introduction">
+      <!-- Remplacer la div par <img src="/hero.jpg" … /> quand la photo est prête -->
+      <div class="hero-img" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="hero-specialty">Photographie de mariage et de couple</p>
+        <h1 class="hero-brand">{brand}</h1>
+        <p class="hero-tagline">L'instant préservé pour toujours</p>
       </div>
-      <p class="hero-meta">Photographie de mariage &amp; couples</p>
-      <div class="hero-scroll" aria-hidden="true"><span></span></div>
-    </section>
-
-    <!-- STATEMENT -->
-    <section class="statement">
-      <p>
-        Je ne photographie pas tout.<br />
-        Seulement ce qui mérite de rester.
-      </p>
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="portfolio" id="portfolio">
-      <span class="eyebrow">Portfolio</span>
-      <div class="grid">
-        <div class="g-item g-tall"><div class="ph ph-1"></div></div>
-        <div class="g-item">      <div class="ph ph-2"></div></div>
-        <div class="g-item">      <div class="ph ph-3"></div></div>
-        <div class="g-item g-wide"><div class="ph ph-4"></div></div>
-        <div class="g-item">      <div class="ph ph-5"></div></div>
-        <div class="g-item g-tall"><div class="ph ph-6"></div></div>
+    <section class="section" id="portfolio">
+      <div class="section-head">
+        <h2 class="title">Portfolio</h2>
+        <p class="subtitle">Le chaos, la tendresse, la vérité d'un jour.</p>
+      </div>
+      <div class="gallery">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div class="gallery-item">
+            <div class={`gallery-ph gallery-ph-${i + 1}`}></div>
+          </div>
+        ))}
       </div>
     </section>
 
     <!-- PRESTATIONS -->
-    <section class="prestations">
-      <div class="presta-pair">
-        <article>
-          <h2>Mariage</h2>
-          <p>Le chaos, la tendresse, la vérité d'un jour.</p>
-          <a href="#contact">Contact →</a>
+    <section class="section section--alt" id="prestations">
+      <div class="section-head">
+        <h2 class="title">Prestations</h2>
+      </div>
+      <div class="presta-grid">
+
+        <article class="presta-card">
+          <h3 class="presta-title">Mariage</h3>
+          <p class="presta-desc">
+            Je photographie votre journée comme elle se vit — dans le désordre, la tendresse
+            et la vérité des moments que vous ne voyez pas défiler.
+          </p>
+          <ul class="presta-includes">
+            <li>Reportage complet de la journée</li>
+            <li>Galerie privée en ligne</li>
+            <li>Photos retouchées livrées sous 4 semaines</li>
+            <li>Fichiers haute résolution</li>
+          </ul>
+          <p class="presta-price">Tarif sur devis</p>
+          <a href="#contact" class="btn">Demander un devis</a>
         </article>
-        <article>
-          <h2>Couples</h2>
-          <p>Ce que vous ne voyez plus. Je le vois.</p>
-          <a href="#contact">Contact →</a>
+
+        <article class="presta-card">
+          <h3 class="presta-title">Couple</h3>
+          <p class="presta-desc">
+            Une séance à deux, dans un endroit qui vous ressemble. Pas de pose imposée —
+            juste vous, comme vous êtes.
+          </p>
+          <ul class="presta-includes">
+            <li>Séance de 1h30 en extérieur ou en studio</li>
+            <li>Galerie privée en ligne</li>
+            <li>Photos retouchées livrées sous 2 semaines</li>
+            <li>Fichiers haute résolution</li>
+          </ul>
+          <p class="presta-price">Tarif sur devis</p>
+          <a href="#contact" class="btn">Demander un devis</a>
         </article>
+
       </div>
     </section>
 
-    <!-- BRIDGE -->
-    <section class="bridge">
-      <p>Vous n'avez rien à préparer.<br />Juste être là.</p>
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <!-- Remplacer par <img src="/about.jpg" alt="…" /> quand la photo est prête -->
+          <div class="about-img-ph" aria-hidden="true"></div>
+        </div>
+        <div class="about-text">
+          <h2 class="title">About</h2>
+          <p>
+            Je m'appelle [Prénom]. Je photographie les mariages et les couples
+            depuis [X] ans.
+          </p>
+          <p>
+            Mon approche est simple : je ne dirige pas. J'observe, je cherche,
+            j'attends l'instant qui dit quelque chose de vrai sur vous deux.
+          </p>
+          <p>
+            Je travaille en lumière naturelle, avec discrétion. Vous oublierez
+            que je suis là. C'est exactement ce que je cherche.
+          </p>
+          <a href="#contact" class="btn btn--outline">Me contacter</a>
+        </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <div class="contact-inner">
-        <h2 class="contact-title">Contact.</h2>
-        <p class="contact-sub">Parlez-moi de votre projet. Je vous réponds sous 48 h.</p>
+    <section class="section section--alt" id="contact">
+      <div class="contact-wrap">
+        <div class="section-head">
+          <h2 class="title">Contact</h2>
+          <p class="subtitle">Parlez-moi de votre projet. Je vous réponds sous 48 h.</p>
+        </div>
         <form
           name="contact"
           method="POST"
@@ -98,6 +145,7 @@ const brand = "Eterna";
         >
           <input type="hidden" name="form-name" value="contact" />
           <p class="sr-only"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+
           <div class="form-row">
             <div class="field">
               <label for="name">Nom</label>
@@ -110,28 +158,34 @@ const brand = "Eterna";
           </div>
           <div class="field">
             <label for="project">Projet</label>
-            <select id="project" name="project">
-              <option value="">Mariage ou séance couple ?</option>
+            <select id="project" name="project" required>
+              <option value="" disabled selected>Mariage ou couple ?</option>
               <option value="mariage">Mariage</option>
-              <option value="couple">Séance couple</option>
-              <option value="autre">Autre</option>
+              <option value="couple">Couple</option>
             </select>
           </div>
           <div class="field">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required
-              placeholder="Votre date, votre lieu, ce que vous imaginez…"></textarea>
+            <textarea
+              id="message" name="message" rows="5" required
+              placeholder="Votre lieu, votre date, ce que vous imaginez…"
+            ></textarea>
           </div>
-          <button type="submit">Écrire</button>
+          <button type="submit" class="btn">Envoyer</button>
         </form>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <span>{brand}</span>
-      <span>&copy; {new Date().getFullYear()}</span>
-      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <span class="footer-logo">{brand}</span>
+      <span class="footer-copy">&copy; {new Date().getFullYear()} Eterna. Tous droits réservés.</span>
+      <a
+        class="footer-ig"
+        href="https://instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Instagram</a>
     </footer>
 
     <script>
@@ -153,20 +207,20 @@ const brand = "Eterna";
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
   :root {
-    --cream:   #f4f0e8;
-    --deep:    #181410;
-    --ink:     #1e1a16;
-    --muted:   #8c8278;
-    --warm:    #a89080;   /* accent discret, jamais crié */
-    --bd-l:    rgba(30,26,22,0.07);
-    --bd-d:    rgba(244,240,232,0.07);
-    --serif:   'Cormorant Garamond', Georgia, serif;
-    --sans:    'Inter', system-ui, sans-serif;
-    --ease:    cubic-bezier(0.25, 0.1, 0.25, 1);
+    --bg:      #f4f0e8;
+    --bg-alt:  #edeae0;   /* sections alternées — même famille, légèrement plus dense */
+    --ink:     #1a1714;
+    --muted:   #8a8078;
+    --accent:  #a08870;
+    --border:  rgba(26,23,20,0.1);
+
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'Inter', system-ui, sans-serif;
+    --ease:  cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   body {
-    background: var(--cream);
+    background: var(--bg);
     color: var(--ink);
     font-family: var(--sans);
     font-weight: 200;
@@ -182,14 +236,14 @@ const brand = "Eterna";
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
-    padding: 1.6rem 4rem;
-    transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+    padding: 1.5rem 4rem;
     border-bottom: 1px solid transparent;
+    transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
   }
   .nav--solid {
     background: rgba(244,240,232,0.95);
     backdrop-filter: blur(10px);
-    border-bottom-color: var(--bd-l);
+    border-bottom-color: var(--border);
   }
   .nav-logo {
     font-family: var(--serif);
@@ -208,241 +262,257 @@ const brand = "Eterna";
 
   /* ── HERO ── */
   .hero {
-    min-height: 100svh;
-    display: flex; flex-direction: column;
-    justify-content: center;
-    padding: 10rem 4rem 6rem;
     position: relative;
+    height: 100svh; min-height: 560px;
+    display: flex; align-items: flex-end;
+    overflow: hidden;
   }
-  .hero-phrase {
-    display: flex; flex-direction: column;
-    gap: 0.1em;
-    margin-bottom: 3rem;
+  .hero-img {
+    position: absolute; inset: 0;
+    /* Placeholder — remplacer background par background-image: url('/hero.jpg') */
+    background: linear-gradient(145deg, #2a2420 0%, #1a1410 50%, #0e0c0a 100%);
+    background-size: cover;
+    background-position: center;
   }
-  .phrase-1 {
-    font-family: var(--serif);
-    font-style: italic; font-weight: 200;
-    font-size: clamp(4rem, 10vw, 9.5rem);
-    line-height: 1;
-    color: var(--muted);
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,8,6,0.75) 0%, rgba(10,8,6,0.1) 50%, transparent 100%);
   }
-  .phrase-2 {
-    font-family: var(--serif);
-    font-weight: 200;
-    font-size: clamp(3.2rem, 8vw, 7.5rem);
-    line-height: 1.05;
-    color: var(--ink);
+  .hero-content {
+    position: relative; z-index: 1;
+    padding: 0 4rem 5rem;
+    color: #f4f0e8;
   }
-  .hero-meta {
-    font-size: 0.67rem; font-weight: 300;
-    letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--muted);
-  }
-  .hero-scroll {
-    position: absolute; bottom: 2.5rem; right: 4rem;
-  }
-  .hero-scroll span {
-    display: block; width: 1px; height: 52px;
-    background: linear-gradient(to bottom, var(--warm), transparent);
-    animation: tick 2.6s ease-in-out infinite;
-  }
-  @keyframes tick {
-    0%,100% { opacity: 0.2; transform: scaleY(0.4); transform-origin: top; }
-    55%      { opacity: 0.6; transform: scaleY(1);   transform-origin: top; }
-  }
-
-  /* ── STATEMENT ── */
-  .statement {
-    background: var(--deep);
-    padding: 6rem 4rem;
-    text-align: center;
-  }
-  .statement p {
-    font-family: var(--serif);
-    font-style: italic; font-weight: 200;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    line-height: 1.6;
-    color: rgba(244,240,232,0.75);
-  }
-
-  /* ── PORTFOLIO ── */
-  .portfolio {
-    background: var(--cream);
-    padding: 8rem 4rem;
-  }
-  .eyebrow {
-    display: block;
+  .hero-specialty {
     font-size: 0.65rem; font-weight: 300;
-    letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--warm); margin-bottom: 2rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(244,240,232,0.55);
+    margin-bottom: 0.6rem;
   }
-  .grid {
+  .hero-brand {
+    font-family: var(--serif);
+    font-size: clamp(5rem, 16vw, 16rem);
+    font-weight: 200; line-height: 0.9;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: #f4f0e8;
+    margin-bottom: 1rem;
+  }
+  .hero-tagline {
+    font-family: var(--serif);
+    font-style: italic; font-weight: 200;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: rgba(244,240,232,0.6);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    background: var(--bg);
+    padding: 7rem 4rem;
+  }
+  .section--alt {
+    background: var(--bg-alt);
+  }
+  .section-head {
+    margin-bottom: 3.5rem;
+  }
+
+  /* ── TITRES UPPERCASE ── */
+  .title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 200; line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .subtitle {
+    font-size: 0.88rem; font-weight: 200;
+    color: var(--muted);
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--ink);
+    background: var(--ink); color: var(--bg);
+    font-family: var(--sans); font-size: 0.67rem;
+    font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none; cursor: pointer;
+    transition: background 0.25s var(--ease), color 0.25s var(--ease);
+  }
+  .btn:hover { background: transparent; color: var(--ink); }
+  .btn--outline {
+    background: transparent; color: var(--ink);
+  }
+  .btn--outline:hover { background: var(--ink); color: var(--bg); }
+
+  /* ── GALLERY ── */
+  .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 300px 220px;
-    gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
   }
-  .g-item { overflow: hidden; }
-  .g-tall { grid-row: span 2; }
-  .g-wide { grid-column: span 2; }
-  .ph {
+  .gallery-item { aspect-ratio: 1 / 1; overflow: hidden; }
+  .gallery-ph {
     width: 100%; height: 100%;
-    transition: transform 0.7s var(--ease);
+    transition: transform 0.6s var(--ease);
   }
-  .g-item:hover .ph { transform: scale(1.02); }
-  .ph-1 { background: linear-gradient(150deg,#d8cfc0 0%,#c4b8a4 100%); }
-  .ph-2 { background: linear-gradient(200deg,#cec4b2 0%,#b8ad9a 100%); }
-  .ph-3 { background: linear-gradient(120deg,#d2c8b4 0%,#bcb09c 100%); }
-  .ph-4 { background: linear-gradient(155deg,#ddd4c2 0%,#c8bca6 60%,#aeA494 100%); }
-  .ph-5 { background: linear-gradient(220deg,#cac0ae 0%,#b8ad9a 100%); }
-  .ph-6 { background: linear-gradient(140deg,#d6cdbf 0%,#bcb2a0 100%); }
+  .gallery-item:hover .gallery-ph { transform: scale(1.04); }
+
+  /* Placeholders neutres et chauds */
+  .gallery-ph-1 { background: #d4cbbf; }
+  .gallery-ph-2 { background: #c8c0b4; }
+  .gallery-ph-3 { background: #d0c8bc; }
+  .gallery-ph-4 { background: #c4bcb0; }
+  .gallery-ph-5 { background: #ccC4b8; }
+  .gallery-ph-6 { background: #beb8ac; }
+  .gallery-ph-7 { background: #d2cac0; }
+  .gallery-ph-8 { background: #c6beb4; }
 
   /* ── PRESTATIONS ── */
-  .prestations {
-    background: var(--deep);
-    padding: 8rem 4rem;
-  }
-  .presta-pair {
+  .presta-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    border-top: 1px solid var(--bd-d);
+    gap: 2px;
   }
-  .presta-pair article {
-    padding: 4rem 0 4rem;
-    border-bottom: 1px solid var(--bd-d);
+  .presta-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 3rem;
     display: flex; flex-direction: column; gap: 1.5rem;
   }
-  .presta-pair article:first-child {
-    padding-right: 5rem;
-    border-right: 1px solid var(--bd-d);
-  }
-  .presta-pair article:last-child {
-    padding-left: 5rem;
-  }
-  .presta-pair h2 {
+  .section--alt .presta-card { background: var(--bg-alt); }
+  .presta-title {
     font-family: var(--serif);
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
-    font-weight: 200; line-height: 1;
-    color: rgba(244,240,232,0.9);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 200; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--ink);
   }
-  .presta-pair p {
+  .presta-desc {
     font-size: 0.88rem; font-weight: 200;
-    color: rgba(244,240,232,0.4);
-    line-height: 1.7; max-width: 28ch;
+    color: var(--muted); line-height: 1.8;
   }
-  .presta-pair a {
-    font-size: 0.7rem; font-weight: 300;
-    letter-spacing: 0.12em;
-    text-decoration: none;
-    color: var(--warm);
-    transition: opacity 0.2s;
-    align-self: flex-start;
+  .presta-includes {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
   }
-  .presta-pair a:hover { opacity: 0.6; }
+  .presta-includes li {
+    font-size: 0.82rem; font-weight: 200;
+    color: var(--ink); padding-left: 1rem; position: relative;
+  }
+  .presta-includes li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--accent); font-size: 0.7rem;
+  }
+  .presta-price {
+    font-size: 0.8rem; font-weight: 300;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-top: auto;
+  }
 
-  /* ── BRIDGE ── */
-  .bridge {
-    background: var(--cream);
-    padding: 7rem 4rem;
-    text-align: center;
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
   }
-  .bridge p {
-    font-family: var(--serif);
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 200; line-height: 1.5;
-    color: var(--ink);
+  .about-img-wrap { }
+  .about-img-ph {
+    aspect-ratio: 3 / 4;
+    /* Placeholder — remplacer par <img src="/about.jpg" … /> */
+    background: linear-gradient(155deg, #cec6bc 0%, #b8b0a6 100%);
   }
+  .about-text {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .about-text .title { margin-bottom: 0.5rem; }
+  .about-text p {
+    font-size: 0.88rem; font-weight: 200;
+    color: var(--muted); line-height: 1.85;
+  }
+  .about-text .btn { align-self: flex-start; margin-top: 0.5rem; }
 
   /* ── CONTACT ── */
-  .contact {
-    background: var(--deep);
-    padding: 8rem 4rem;
+  .contact-wrap { max-width: 640px; }
+  form {
+    display: flex; flex-direction: column; gap: 1.6rem;
+    margin-top: 2.5rem;
   }
-  .contact-inner { max-width: 580px; }
-  .contact-title {
-    font-family: var(--serif);
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    font-weight: 200;
-    color: rgba(244,240,232,0.9);
-    margin-bottom: 0.75rem;
-  }
-  .contact-sub {
-    font-size: 0.85rem; font-weight: 200;
-    color: rgba(244,240,232,0.35);
-    margin-bottom: 3rem; line-height: 1.7;
-  }
-  form { display: flex; flex-direction: column; gap: 1.8rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
-  .field { display: flex; flex-direction: column; gap: 0.45rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .field { display: flex; flex-direction: column; gap: 0.4rem; }
   .field label {
     font-size: 0.6rem; font-weight: 300;
     letter-spacing: 0.22em; text-transform: uppercase;
-    color: rgba(244,240,232,0.3);
+    color: var(--muted);
   }
   form input, form select, form textarea {
-    background: transparent; border: none;
-    border-bottom: 1px solid var(--bd-d);
+    background: transparent;
+    border: none; border-bottom: 1px solid var(--border);
     padding: 0.55rem 0; width: 100%;
-    color: rgba(244,240,232,0.8);
+    color: var(--ink);
     font-family: var(--sans); font-size: 0.9rem; font-weight: 200;
-    outline: none; transition: border-color 0.25s;
+    outline: none; transition: border-color 0.2s;
   }
   form input:focus, form select:focus, form textarea:focus {
-    border-bottom-color: var(--warm);
+    border-bottom-color: var(--ink);
   }
   form select { -webkit-appearance: none; cursor: pointer; }
-  form select option { background: var(--deep); color: rgba(244,240,232,0.8); }
   form textarea { resize: vertical; }
-  form ::placeholder { color: rgba(244,240,232,0.2); }
-  form button {
-    align-self: flex-start;
-    background: transparent;
-    border: 1px solid rgba(244,240,232,0.25);
-    padding: 0.75rem 2.5rem;
-    color: rgba(244,240,232,0.7);
-    font-family: var(--sans); font-size: 0.68rem;
-    font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase;
-    cursor: pointer; transition: border-color 0.25s, color 0.25s;
-  }
-  form button:hover {
-    border-color: rgba(244,240,232,0.6);
-    color: rgba(244,240,232,0.95);
-  }
+  form ::placeholder { color: rgba(26,23,20,0.3); }
+  form button { align-self: flex-start; }
 
   /* ── FOOTER ── */
   .footer {
-    background: var(--deep);
-    border-top: 1px solid var(--bd-d);
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
     padding: 1.5rem 4rem;
     display: flex; justify-content: space-between; align-items: center;
-    font-size: 0.65rem; font-weight: 300;
-    letter-spacing: 0.1em; color: rgba(244,240,232,0.25);
   }
-  .footer a { color: inherit; text-decoration: none; transition: color 0.2s; }
-  .footer a:hover { color: rgba(244,240,232,0.6); }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1rem; font-weight: 200;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink);
+  }
+  .footer-copy {
+    font-size: 0.65rem; font-weight: 200;
+    letter-spacing: 0.06em; color: var(--muted);
+  }
+  .footer-ig {
+    font-size: 0.65rem; font-weight: 300;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; color: var(--muted);
+    transition: color 0.2s;
+  }
+  .footer-ig:hover { color: var(--ink); }
 
   /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .gallery { grid-template-columns: repeat(3, 1fr); }
+  }
+
   @media (max-width: 860px) {
     .nav { padding: 1.2rem 2rem; }
-    section, .portfolio, .prestations, .contact, .bridge, .statement {
-      padding-left: 2rem; padding-right: 2rem;
-    }
-    .hero { padding: 8rem 2rem 5rem; }
-    .hero-scroll { right: 2rem; }
-    .grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .g-tall, .g-wide { grid-row: auto; grid-column: auto; }
-    .presta-pair { grid-template-columns: 1fr; }
-    .presta-pair article:first-child {
-      padding-right: 0; border-right: none; border-bottom: 1px solid var(--bd-d);
-    }
-    .presta-pair article:last-child { padding-left: 0; }
-    .footer { padding: 1.5rem 2rem; gap: 1rem; flex-wrap: wrap; }
+    .section, .contact-wrap { padding-left: 2rem; padding-right: 2rem; }
+    .section { padding: 5rem 2rem; }
+    .hero-content { padding: 0 2rem 4rem; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .presta-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer { padding: 1.5rem 2rem; flex-wrap: wrap; gap: 0.75rem; }
+    .footer-copy { order: 3; flex-basis: 100%; text-align: center; }
   }
 
   @media (max-width: 540px) {
     .nav nav { display: none; }
-    .grid { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; }
     .form-row { grid-template-columns: 1fr; }
+    .hero-brand { letter-spacing: 0.02em; }
   }
 </style>
