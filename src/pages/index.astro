@@ -1,6 +1,5 @@
 ---
-const brand   = "Eterna";
-const tagline = "L'intensité de l'instant, préservée pour toujours.";
+const brand = "Eterna";
 ---
 
 <!doctype html>
@@ -13,176 +12,135 @@ const tagline = "L'intensité de l'instant, préservée pour toujours.";
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Eterna — Photographie d'art émotionnelle. Portraits, couples, événements privés. Une expérience photographique hors du commun."
+      content="Eterna — Photographie de mariage et de couples. Des images qui gardent ce que vous ressentez vraiment."
     />
-    <title>{brand} — Photographie d'art</title>
+    <title>{brand} — Photographie de mariage & couples</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Inter:wght@200;300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;1,200;1,300&family=Inter:wght@200;300&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
 
     <!-- ─── NAV ─── -->
-    <header class="nav">
+    <header class="nav" id="nav">
       <a href="/" class="nav-logo">{brand}</a>
       <nav class="nav-links">
         <a href="#portfolio">Portfolio</a>
-        <a href="#univers">Univers</a>
-        <a href="#prestations">Prestations</a>
-        <a href="#contact">Réserver</a>
+        <a href="#prestations">Mariages & Couples</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <!-- ─── HERO ─── -->
-    <section class="hero" aria-label="Présentation">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="hero-eyebrow">Photographie d'art</span>
-        <h1 class="hero-brand">{brand}</h1>
-        <p class="hero-tagline">{tagline}</p>
-        <a href="#contact" class="btn">Réserver une séance</a>
+    <!-- ─── HERO (CLAIR) ─── -->
+    <section class="hero section--light" aria-label="Introduction">
+      <div class="hero-inner">
+        <h1 class="hero-headline">
+          <em>Ce qui existe<br />entre vous</em><br />
+          mérite d'être gardé.
+        </h1>
+        <p class="hero-sub">Photographie de mariage &amp; couples</p>
+        <a href="#contact" class="btn btn--dark">Réserver</a>
       </div>
-      <div class="hero-scroll" aria-hidden="true">
-        <span class="scroll-line"></span>
-      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
     </section>
 
-    <!-- ─── MANIFESTE ─── -->
-    <section class="manifeste" id="univers" aria-label="Manifeste">
-      <div class="manifeste-inner">
-        <p class="manifeste-quote">
-          "Je ne capture pas des images.<br />Je fixe ce qui disparaît."
-        </p>
-        <div class="manifeste-divider"></div>
-        <p class="manifeste-body">
-          Chaque séance Eterna est une rencontre — avec votre vérité, avec la lumière qui vous appartient.
-          Pas de mise en scène. Pas de masque. Seulement ce qui est là, vivant,
-          dans l'espace entre deux respirations.
-        </p>
-        <p class="manifeste-body">
-          Ce que vous emporterez n'est pas une photo. C'est une preuve que vous avez existé,
-          pleinement, le temps d'un instant.
+    <!-- ─── INTENTION (SOMBRE) ─── -->
+    <section class="intention section--dark" aria-label="Intention artistique">
+      <div class="intention-inner">
+        <p class="intention-text">
+          Je cherche ce qui ne se répète pas.<br />
+          Le geste juste avant. L'émotion encore là.<br />
+          Ce que vous ne voyez plus parce que vous êtes à l'intérieur.
         </p>
       </div>
     </section>
 
-    <!-- ─── PORTFOLIO ─── -->
-    <section class="portfolio" id="portfolio" aria-label="Portfolio">
-      <header class="section-header">
-        <span class="label">— Portfolio</span>
-        <h2 class="section-title">Fragments d'éternité</h2>
+    <!-- ─── PORTFOLIO (CLAIR) ─── -->
+    <section class="portfolio section--light" id="portfolio" aria-label="Portfolio">
+      <header class="s-header">
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="s-title">Ce qui reste</h2>
       </header>
       <div class="portfolio-grid">
-        <div class="pg-item pg-tall">
-          <div class="ph ph-1"></div>
-        </div>
-        <div class="pg-item">
-          <div class="ph ph-2"></div>
-        </div>
-        <div class="pg-item">
-          <div class="ph ph-3"></div>
-        </div>
-        <div class="pg-item pg-wide">
-          <div class="ph ph-4"></div>
-        </div>
-        <div class="pg-item">
-          <div class="ph ph-5"></div>
-        </div>
-        <div class="pg-item pg-tall">
-          <div class="ph ph-6"></div>
-        </div>
+        <div class="pg-item pg-tall"><div class="ph ph-1"></div></div>
+        <div class="pg-item">       <div class="ph ph-2"></div></div>
+        <div class="pg-item">       <div class="ph ph-3"></div></div>
+        <div class="pg-item pg-wide"><div class="ph ph-4"></div></div>
+        <div class="pg-item">       <div class="ph ph-5"></div></div>
+        <div class="pg-item pg-tall"><div class="ph ph-6"></div></div>
       </div>
     </section>
 
-    <!-- ─── PRESTATIONS ─── -->
-    <section class="prestations" id="prestations" aria-label="Prestations">
-      <header class="section-header">
-        <span class="label">— Prestations</span>
-        <h2 class="section-title">Ce que nous créons ensemble</h2>
+    <!-- ─── PRESTATIONS (SOMBRE) ─── -->
+    <section class="prestations section--dark" id="prestations" aria-label="Mariages et couples">
+      <header class="s-header">
+        <span class="eyebrow">Ce que nous vivons ensemble</span>
+        <h2 class="s-title">Mariage &amp; Couples</h2>
       </header>
-      <div class="presta-list">
-        <article class="presta-item">
-          <span class="presta-num">01</span>
-          <div class="presta-body">
-            <h3>Portraits Intimistes</h3>
-            <p>
-              Une séance construite autour de vous. En studio ou en extérieur,
-              dans la lumière qui vous ressemble. Pour les individus, les artistes,
-              les âmes qui cherchent à se retrouver.
-            </p>
-          </div>
-          <a href="#contact" class="presta-link" aria-label="Réserver un portrait intimiste">→</a>
+      <div class="presta-grid">
+
+        <article class="presta-card">
+          <span class="presta-label">Mariage</span>
+          <p class="presta-text">
+            Votre journée telle que vous la vivez —
+            pas comme on vous la montre.
+            Je commence par vous écouter. Je passe la journée
+            à chercher ce qui est vrai, entre les lignes du programme.
+            Le regard. Le fou rire. La main serrée fort.
+          </p>
+          <a href="#contact" class="btn btn--outline">Réserver</a>
         </article>
-        <article class="presta-item">
-          <span class="presta-num">02</span>
-          <div class="presta-body">
-            <h3>Couples &amp; Liens</h3>
-            <p>
-              L'amour tel qu'il se vit vraiment — sans pose, sans distance.
-              Une errance photographique à deux, dans les lieux qui vous appartiennent.
-            </p>
-          </div>
-          <a href="#contact" class="presta-link" aria-label="Réserver une séance couple">→</a>
+
+        <article class="presta-card">
+          <span class="presta-label">Couples</span>
+          <p class="presta-text">
+            Une errance à deux, dans un endroit qui vous ressemble.
+            Pas de pose. Pas de mise en scène.
+            Juste vous, comme vous êtes quand vous oubliez
+            qu'on vous regarde.
+          </p>
+          <a href="#contact" class="btn btn--outline">Réserver</a>
         </article>
-        <article class="presta-item">
-          <span class="presta-num">03</span>
-          <div class="presta-body">
-            <h3>Événements Privés</h3>
-            <p>
-              Cérémonies, célébrations, moments de passage. Je documente ce qui
-              ne se répète pas — avec la discrétion et l'acuité qu'il mérite.
-            </p>
-          </div>
-          <a href="#contact" class="presta-link" aria-label="Réserver un reportage événement">→</a>
-        </article>
+
       </div>
     </section>
 
-    <!-- ─── EXPÉRIENCE ─── -->
-    <section class="experience" aria-label="Expérience client">
-      <div class="experience-inner">
-        <header class="section-header">
-          <span class="label">— L'expérience</span>
-          <h2 class="section-title">Une séance Eterna</h2>
+    <!-- ─── EXPÉRIENCE (CLAIR) ─── -->
+    <section class="experience section--light" aria-label="Ce que vous vivrez">
+      <div class="exp-inner">
+        <header class="s-header">
+          <span class="eyebrow">L'expérience</span>
+          <h2 class="s-title">Vous n'avez rien à préparer.</h2>
         </header>
-        <ol class="exp-steps">
-          <li class="exp-step">
-            <span class="exp-num">I</span>
-            <div>
-              <h4>Consultation</h4>
-              <p>Un échange pour comprendre ce que vous voulez garder. Pas un brief — une conversation.</p>
-            </div>
-          </li>
-          <li class="exp-step">
-            <span class="exp-num">II</span>
-            <div>
-              <h4>La séance</h4>
-              <p>Un espace sans jugement, sans urgence. Vous arrivez. La lumière fait le reste.</p>
-            </div>
-          </li>
-          <li class="exp-step">
-            <span class="exp-num">III</span>
-            <div>
-              <h4>Galerie privée</h4>
-              <p>Une sélection livrée dans une galerie en ligne dédiée. Tirages disponibles sur demande.</p>
-            </div>
-          </li>
-        </ol>
+        <div class="exp-body">
+          <p>
+            Rien à faire semblant. Pas besoin d'être photogénique, prêt·e,
+            ou de savoir comment tenir vos mains.
+          </p>
+          <p>
+            Je serai là, discrète. Je chercherai la lumière qui tombe dans votre
+            direction. Le silence juste avant que vous vous embrassiez.
+            Le moment où vous riez parce que vous avez oublié que j'existe.
+          </p>
+          <p class="exp-close">
+            C'est ça que je garde.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- ─── CONTACT ─── -->
-    <section class="contact" id="contact" aria-label="Réservation">
+    <!-- ─── CONTACT (SOMBRE) ─── -->
+    <section class="contact section--dark" id="contact" aria-label="Contact et réservation">
       <div class="contact-inner">
-        <header class="section-header section-header--center">
-          <span class="label">— Contact</span>
-          <h2 class="section-title">Commençons ensemble</h2>
+        <header class="s-header">
+          <span class="eyebrow">Contact</span>
+          <h2 class="s-title">On se retrouve&nbsp;?</h2>
           <p class="contact-sub">
-            Parlez-moi de votre projet. Je vous réponds sous 48 h.
+            Parlez-moi de vous, de votre date, de ce que vous imaginez.
+            Je vous réponds sous 48&nbsp;h.
           </p>
         </header>
         <form
@@ -198,7 +156,7 @@ const tagline = "L'intensité de l'instant, préservée pour toujours.";
           </p>
           <div class="form-row">
             <div class="form-field">
-              <label for="name">Nom</label>
+              <label for="name">Prénom &amp; Nom</label>
               <input id="name" type="text" name="name" required autocomplete="name" />
             </div>
             <div class="form-field">
@@ -209,24 +167,24 @@ const tagline = "L'intensité de l'instant, préservée pour toujours.";
           <div class="form-field">
             <label for="project">Votre projet</label>
             <select id="project" name="project">
-              <option value="">— Choisir une prestation</option>
-              <option value="portrait">Portrait intimiste</option>
-              <option value="couple">Couple &amp; liens</option>
-              <option value="evenement">Événement privé</option>
+              <option value="">— Mariage ou séance couple ?</option>
+              <option value="mariage">Mariage</option>
+              <option value="couple">Séance couple</option>
               <option value="autre">Autre</option>
             </select>
           </div>
           <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" rows="5" required
+              placeholder="Votre date, votre lieu, ce que vous ressentez…"></textarea>
           </div>
-          <button type="submit" class="btn btn--full">Envoyer</button>
+          <button type="submit" class="btn btn--light btn--full">Me contacter</button>
         </form>
       </div>
     </section>
 
     <!-- ─── FOOTER ─── -->
-    <footer class="footer">
+    <footer class="footer section--dark">
       <span class="footer-brand">{brand}</span>
       <p class="footer-copy">&copy; {new Date().getFullYear()} Eterna. Tous droits réservés.</p>
       <a
@@ -238,32 +196,57 @@ const tagline = "L'intensité de l'instant, préservée pour toujours.";
       >Instagram</a>
     </footer>
 
+    <script>
+      // Nav : fond visible au scroll
+      const nav = document.getElementById('nav');
+      const hero = document.querySelector('.hero');
+      const io = new IntersectionObserver(
+        ([e]) => nav?.classList.toggle('nav--scrolled', !e.isIntersecting),
+        { threshold: 0.1 }
+      );
+      if (hero) io.observe(hero);
+    </script>
+
   </body>
 </html>
 
 <style is:global>
-  /* ── RESET & BASE ─────────────────────────────── */
+  /* ── RESET ─────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
   :root {
-    --bg:       #0d0c0a;
-    --surface:  #141310;
-    --text:     #f0ece6;
-    --muted:    #7a756e;
-    --gold:     #c9a96e;
-    --border:   rgba(240,236,230,0.08);
-    --serif:    'Cormorant Garamond', Georgia, serif;
-    --sans:     'Inter', system-ui, sans-serif;
-    --transition: 0.35s cubic-bezier(0.25,0.1,0.25,1);
+    /* Palettes */
+    --cream:      #f5f0e8;
+    --cream-2:    #ede8de;
+    --deep:       #1c1714;
+    --deep-2:     #141210;
+
+    /* Textes */
+    --text-on-light:   #201c18;
+    --muted-on-light:  #8a7f74;
+    --text-on-dark:    #ede8de;
+    --muted-on-dark:   #8a8078;
+
+    /* Accent — chaleureux, pas "luxe" */
+    --accent:     #b08870;
+
+    /* Bordures */
+    --border-l:   rgba(32,28,24,0.08);
+    --border-d:   rgba(237,232,222,0.08);
+
+    /* Typo */
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'Inter', system-ui, sans-serif;
+    --ease:  cubic-bezier(0.25, 0.1, 0.25, 1);
   }
 
   body {
-    background: var(--bg);
-    color: var(--text);
     font-family: var(--sans);
     font-weight: 200;
     line-height: 1.7;
+    background: var(--cream);
+    color: var(--text-on-light);
   }
 
   .visually-hidden {
@@ -271,382 +254,281 @@ const tagline = "L'intensité de l'instant, préservée pour toujours.";
     overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
   }
 
-  /* ── NAV ──────────────────────────────────────── */
+  /* ── SECTION MODES ─────────────────────────── */
+  .section--light {
+    background: var(--cream);
+    color: var(--text-on-light);
+  }
+  .section--dark {
+    background: var(--deep);
+    color: var(--text-on-dark);
+  }
+
+  /* ── NAV ────────────────────────────────────── */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1.5rem 4rem;
-    background: rgba(13,12,10,0.85);
+    transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+    border-bottom: 1px solid transparent;
+  }
+  .nav--scrolled {
+    background: rgba(245,240,232,0.94);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    border-bottom-color: var(--border-l);
   }
   .nav-logo {
     font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 200;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text);
+    font-size: 1.5rem; font-weight: 200;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    text-decoration: none; color: var(--text-on-light);
   }
   .nav-links { display: flex; gap: 2.5rem; }
   .nav-links a {
-    font-size: 0.68rem;
-    font-weight: 300;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-    transition: color var(--transition);
+    font-size: 0.68rem; font-weight: 300;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    text-decoration: none; color: var(--muted-on-light);
+    transition: color 0.25s;
   }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover { color: var(--text-on-light); }
 
-  /* ── HERO ─────────────────────────────────────── */
-  .hero {
-    position: relative;
-    height: 100svh;
-    min-height: 600px;
-    display: flex;
-    align-items: flex-end;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: linear-gradient(160deg, #1a1710 0%, #0a0908 60%, #070605 100%);
-  }
-  /* Texture grain subtil */
-  .hero-bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    opacity: 0.4;
-    pointer-events: none;
-  }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(13,12,10,0.9) 0%, transparent 55%);
-  }
-  .hero-content {
-    position: relative; z-index: 1;
-    padding: 0 4rem 8rem;
-  }
-  .hero-eyebrow {
-    display: block;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .hero-brand {
-    font-family: var(--serif);
-    font-size: clamp(5rem, 14vw, 13rem);
-    font-weight: 200;
-    line-height: 0.9;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    color: var(--text);
-  }
-  .hero-tagline {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(1rem, 2vw, 1.35rem);
-    font-weight: 200;
-    color: rgba(240,236,230,0.6);
-    max-width: 42ch;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-scroll {
-    position: absolute; bottom: 2.5rem; right: 4rem;
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  }
-  .scroll-line {
-    display: block; width: 1px; height: 60px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 2.4s ease-in-out infinite;
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.2; transform: scaleY(0.6); transform-origin: top; }
-    50%       { opacity: 0.8; transform: scaleY(1);   transform-origin: top; }
-  }
-
-  /* ── BUTTONS ──────────────────────────────────── */
+  /* ── BUTTONS ────────────────────────────────── */
   .btn {
     display: inline-block;
-    padding: 0.85rem 2.5rem;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    background: transparent;
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background var(--transition), color var(--transition);
+    padding: 0.8rem 2.2rem;
+    font-family: var(--sans); font-size: 0.68rem;
+    font-weight: 300; letter-spacing: 0.2em;
+    text-transform: uppercase; text-decoration: none;
+    border: 1px solid; cursor: pointer;
+    transition: background 0.3s var(--ease), color 0.3s var(--ease);
   }
-  .btn:hover { background: var(--gold); color: var(--bg); }
+  .btn--dark {
+    border-color: var(--text-on-light);
+    color: var(--text-on-light); background: transparent;
+  }
+  .btn--dark:hover { background: var(--text-on-light); color: var(--cream); }
+
+  .btn--outline {
+    border-color: var(--text-on-dark);
+    color: var(--text-on-dark); background: transparent;
+  }
+  .btn--outline:hover { background: var(--text-on-dark); color: var(--deep); }
+
+  .btn--light {
+    border-color: var(--text-on-dark);
+    color: var(--deep); background: var(--text-on-dark);
+  }
+  .btn--light:hover { background: transparent; color: var(--text-on-dark); }
+
   .btn--full { width: 100%; text-align: center; }
 
-  /* ── SECTION SHARED ───────────────────────────── */
+  /* ── SECTION HEADERS ────────────────────────── */
   section { padding: 8rem 4rem; }
 
-  .section-header { margin-bottom: 4rem; }
-  .section-header--center { text-align: center; }
+  .s-header { margin-bottom: 3.5rem; }
 
-  .label {
-    display: block;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
+  .eyebrow {
+    display: block; font-size: 0.65rem; font-weight: 300;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.75rem;
   }
-  .section-title {
+  .s-title {
     font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 200;
-    line-height: 1.1;
-    color: var(--text);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 200; line-height: 1.15;
   }
+  .section--light .s-title  { color: var(--text-on-light); }
+  .section--dark  .s-title  { color: var(--text-on-dark);  }
 
-  /* ── MANIFESTE ────────────────────────────────── */
-  .manifeste {
-    background: var(--surface);
-    text-align: center;
+  /* ── HERO ───────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex; align-items: center;
+    padding-top: 6rem;
   }
-  .manifeste-inner { max-width: 680px; margin: 0 auto; }
-  .manifeste-quote {
+  .hero-inner { padding: 0 4rem 6rem; }
+  .hero-headline {
     font-family: var(--serif);
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-style: italic;
-    font-weight: 200;
-    line-height: 1.4;
-    color: var(--text);
-    margin-bottom: 2rem;
+    font-size: clamp(3.2rem, 8vw, 8rem);
+    font-weight: 200; line-height: 1.05;
+    color: var(--text-on-light);
+    margin-bottom: 1.5rem;
   }
-  .manifeste-divider {
-    width: 40px; height: 1px;
-    background: var(--gold);
-    margin: 0 auto 2rem;
+  .hero-headline em {
+    font-style: italic; font-weight: 200;
+    color: var(--muted-on-light);
   }
-  .manifeste-body {
-    font-size: 0.9rem;
-    font-weight: 200;
-    color: var(--muted);
-    max-width: 52ch;
-    margin: 0 auto 1rem;
-    line-height: 1.9;
+  .hero-sub {
+    font-size: 0.78rem; font-weight: 300;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted-on-light); margin-bottom: 2.5rem;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; right: 4rem;
+  }
+  .hero-scroll span {
+    display: block; width: 1px; height: 56px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.25; transform: scaleY(0.5); transform-origin: top; }
+    50%       { opacity: 0.7;  transform: scaleY(1);   transform-origin: top; }
   }
 
-  /* ── PORTFOLIO ────────────────────────────────── */
-  .portfolio { background: var(--bg); }
+  /* ── INTENTION ──────────────────────────────── */
+  .intention { text-align: center; }
+  .intention-inner { max-width: 640px; margin: 0 auto; }
+  .intention-text {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-style: italic; font-weight: 200;
+    line-height: 1.6;
+    color: var(--text-on-dark);
+  }
+
+  /* ── PORTFOLIO ──────────────────────────────── */
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 320px 240px;
-    gap: 3px;
+    grid-template-rows: 300px 220px;
+    gap: 4px;
   }
   .pg-item { overflow: hidden; }
   .pg-tall { grid-row: span 2; }
   .pg-wide { grid-column: span 2; }
-
   .ph {
     width: 100%; height: 100%;
-    transition: transform 0.7s cubic-bezier(0.25,0.1,0.25,1);
+    transition: transform 0.65s var(--ease);
   }
-  .pg-item:hover .ph { transform: scale(1.03); }
+  .pg-item:hover .ph { transform: scale(1.025); }
 
-  /* Placeholder gradients — cinématiques, chaque image différente */
-  .ph-1 { background: linear-gradient(145deg,#1c1815 0%,#2a2218 50%,#0f0d0b 100%); }
-  .ph-2 { background: linear-gradient(200deg,#1a1614 0%,#251e18 100%); }
-  .ph-3 { background: linear-gradient(110deg,#120f0d 0%,#1e1a16 100%); }
-  .ph-4 { background: linear-gradient(160deg,#18150f 0%,#2c2418 50%,#0e0c09 100%); }
-  .ph-5 { background: linear-gradient(220deg,#1b1611 0%,#100e0b 100%); }
-  .ph-6 { background: linear-gradient(135deg,#0f0d0a 0%,#201a14 100%); }
+  /* Placeholders : tons chauds, lumineux mais profonds */
+  .ph-1 { background: linear-gradient(150deg, #d9cfc2 0%, #c4b8a8 100%); }
+  .ph-2 { background: linear-gradient(200deg, #cec4b4 0%, #b8ad9e 100%); }
+  .ph-3 { background: linear-gradient(120deg, #d4cab8 0%, #bfb4a0 100%); }
+  .ph-4 { background: linear-gradient(155deg, #e0d5c4 0%, #c8bca8 60%, #b0a694 100%); }
+  .ph-5 { background: linear-gradient(220deg, #ccc0ae 0%, #b8ad9c 100%); }
+  .ph-6 { background: linear-gradient(140deg, #d8cfc0 0%, #c0b5a4 100%); }
 
-  /* ── PRESTATIONS ──────────────────────────────── */
-  .prestations { background: var(--surface); }
-  .presta-list { display: flex; flex-direction: column; gap: 0; }
-  .presta-item {
+  /* ── PRESTATIONS ────────────────────────────── */
+  .presta-grid {
     display: grid;
-    grid-template-columns: 80px 1fr 40px;
-    align-items: center;
-    gap: 2rem;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--border);
-    transition: background var(--transition);
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
   }
-  .presta-item:first-child { border-top: 1px solid var(--border); }
-  .presta-num {
+  .presta-card {
+    background: var(--deep-2);
+    padding: 3.5rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+    border: 1px solid var(--border-d);
+    transition: border-color 0.3s;
+  }
+  .presta-card:hover { border-color: rgba(237,232,222,0.2); }
+  .presta-label {
     font-family: var(--serif);
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 200;
-    color: var(--gold);
-    opacity: 0.5;
+    color: var(--text-on-dark);
   }
-  .presta-body h3 {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 200;
-    margin-bottom: 0.4rem;
-    color: var(--text);
-    transition: color var(--transition);
-  }
-  .presta-item:hover .presta-body h3 { color: var(--gold); }
-  .presta-body p {
-    font-size: 0.85rem;
-    font-weight: 200;
-    color: var(--muted);
-    max-width: 55ch;
-    line-height: 1.8;
-  }
-  .presta-link {
-    font-size: 1.3rem;
-    color: var(--muted);
-    text-decoration: none;
-    justify-self: end;
-    transition: color var(--transition), transform var(--transition);
-  }
-  .presta-item:hover .presta-link { color: var(--gold); transform: translateX(4px); }
-
-  /* ── EXPÉRIENCE ───────────────────────────────── */
-  .experience { background: var(--bg); }
-  .experience-inner { max-width: 760px; }
-  .exp-steps {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .exp-step {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 2rem;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
-  }
-  .exp-step:first-child { border-top: 1px solid var(--border); }
-  .exp-num {
-    font-family: var(--serif);
-    font-size: 0.85rem;
-    font-weight: 200;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    padding-top: 0.2rem;
-  }
-  .exp-step h4 {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 200;
-    margin-bottom: 0.4rem;
-    color: var(--text);
-  }
-  .exp-step p {
-    font-size: 0.85rem;
-    font-weight: 200;
-    color: var(--muted);
-    line-height: 1.8;
+  .presta-text {
+    font-size: 0.88rem; font-weight: 200;
+    color: var(--muted-on-dark);
+    line-height: 1.85; flex: 1;
   }
 
-  /* ── CONTACT ──────────────────────────────────── */
-  .contact { background: var(--surface); }
-  .contact-inner { max-width: 640px; margin: 0 auto; }
+  /* ── EXPÉRIENCE ─────────────────────────────── */
+  .experience { }
+  .exp-inner { max-width: 720px; }
+  .exp-body {
+    display: flex; flex-direction: column; gap: 1.2rem;
+    font-size: 0.95rem; font-weight: 200;
+    color: var(--muted-on-light); line-height: 1.85;
+  }
+  .exp-close {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.6rem; font-weight: 200;
+    color: var(--text-on-light);
+    margin-top: 0.5rem;
+  }
+
+  /* ── CONTACT ────────────────────────────────── */
+  .contact-inner { max-width: 620px; }
   .contact-sub {
-    font-size: 0.85rem;
-    font-weight: 200;
-    color: var(--muted);
-    margin-top: 0.75rem;
+    font-size: 0.88rem; font-weight: 200;
+    color: var(--muted-on-dark);
+    margin-top: 0.75rem; line-height: 1.7;
   }
-  .contact-form { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .contact-form {
+    display: flex; flex-direction: column; gap: 1.8rem; margin-top: 3rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
   .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
   .form-field label {
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-size: 0.62rem; font-weight: 300;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted-on-dark);
   }
   .contact-form input,
   .contact-form select,
   .contact-form textarea {
     background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--border);
-    padding: 0.6rem 0;
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 0.9rem;
-    font-weight: 200;
-    outline: none;
-    transition: border-color var(--transition);
-    width: 100%;
+    border: none; border-bottom: 1px solid var(--border-d);
+    padding: 0.6rem 0; width: 100%;
+    color: var(--text-on-dark);
+    font-family: var(--sans); font-size: 0.9rem; font-weight: 200;
+    outline: none; transition: border-color 0.25s;
   }
-  .contact-form select {
-    -webkit-appearance: none;
-    cursor: pointer;
-  }
-  .contact-form select option { background: var(--surface); color: var(--text); }
   .contact-form input:focus,
   .contact-form select:focus,
-  .contact-form textarea:focus { border-bottom-color: var(--gold); }
+  .contact-form textarea:focus { border-bottom-color: var(--accent); }
+  .contact-form select { -webkit-appearance: none; cursor: pointer; }
+  .contact-form select option { background: var(--deep); }
   .contact-form textarea { resize: vertical; }
+  .contact-form ::placeholder { color: var(--muted-on-dark); opacity: 0.5; }
 
-  /* ── FOOTER ───────────────────────────────────── */
+  /* ── FOOTER ─────────────────────────────────── */
   .footer {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
     padding: 2rem 4rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-d);
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center;
   }
   .footer-brand {
     font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 200;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--text);
+    font-size: 1.1rem; font-weight: 200;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--text-on-dark);
   }
   .footer-copy {
-    font-size: 0.7rem;
-    font-weight: 200;
-    letter-spacing: 0.08em;
-    color: var(--muted);
+    font-size: 0.68rem; font-weight: 200;
+    letter-spacing: 0.06em; color: var(--muted-on-dark);
     text-align: center;
   }
   .footer-ig {
-    font-size: 0.68rem;
-    font-weight: 300;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-    text-align: right;
-    transition: color var(--transition);
+    font-size: 0.68rem; font-weight: 300;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    text-decoration: none; color: var(--muted-on-dark);
+    text-align: right; transition: color 0.25s;
   }
-  .footer-ig:hover { color: var(--gold); }
+  .footer-ig:hover { color: var(--text-on-dark); }
 
-  /* ── RESPONSIVE ───────────────────────────────── */
+  /* ── RESPONSIVE ─────────────────────────────── */
   @media (max-width: 900px) {
     .nav { padding: 1.2rem 2rem; }
     .nav-links { gap: 1.5rem; }
     section { padding: 5rem 2rem; }
-    .hero-content { padding: 0 2rem 6rem; }
+    .hero-inner { padding: 0 2rem 5rem; }
     .hero-scroll { right: 2rem; }
     .portfolio-grid {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
     }
     .pg-tall, .pg-wide { grid-row: auto; grid-column: auto; }
-    .presta-item { grid-template-columns: 50px 1fr 30px; gap: 1rem; }
+    .presta-grid { grid-template-columns: 1fr; }
+    .presta-card { padding: 2.5rem; }
     .footer { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
     .footer-ig { text-align: center; }
   }
@@ -655,6 +537,6 @@ const tagline = "L'intensité de l'instant, préservée pour toujours.";
     .nav-links { display: none; }
     .portfolio-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .hero-brand { font-size: clamp(4rem, 20vw, 7rem); }
+    .hero-headline { font-size: clamp(2.8rem, 16vw, 5rem); }
   }
 </style>
