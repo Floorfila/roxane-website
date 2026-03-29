@@ -71,33 +71,63 @@ const brand = "Eterna";
         <article class="presta-card">
           <h3 class="presta-title">Mariage</h3>
           <p class="presta-desc">
-            Je photographie votre journée comme elle se vit — dans le désordre, la tendresse
-            et la vérité des moments que vous ne voyez pas défiler.
+            Je photographie votre journée comme vous la vivez ;<br />
+            dans le désordre, la tendresse, le chaos, la vérité des moments.
           </p>
+          <p class="presta-desc">
+            Votre seul rôle : vivre.<br />
+            Le mien : être là.
+          </p>
+          <p class="presta-section-label">Expérience</p>
+          <ul class="presta-includes">
+            <li>Prise de contact via le formulaire</li>
+            <li>Échange sur WhatsApp</li>
+            <li>Visio pour découvrir votre histoire</li>
+            <li>Puis échanges libres, autant que nécessaire jusqu'au jour J</li>
+          </ul>
+          <p class="presta-section-label">Ce que vous recevez</p>
           <ul class="presta-includes">
             <li>Reportage complet de la journée</li>
-            <li>Galerie privée en ligne</li>
-            <li>Photos retouchées livrées sous 4 semaines</li>
-            <li>Fichiers haute résolution</li>
+            <li>Fichiers en haute résolution</li>
+            <li>Livraison sous 6 semaines</li>
+            <li>Un print sélectionné par mon regard</li>
           </ul>
-          <p class="presta-price">Tarif sur devis</p>
-          <a href="#contact" class="btn">Demander un devis</a>
+          <p class="presta-price">
+            À partir de 2 200 €
+            <span class="presta-price-note">Frais de déplacement et hébergement en supplément si nécessaire.</span>
+          </p>
+          <a href="#contact" class="btn">Me contacter</a>
         </article>
 
         <article class="presta-card">
           <h3 class="presta-title">Couple</h3>
           <p class="presta-desc">
-            Une séance à deux, dans un endroit qui vous ressemble. Pas de pose imposée —
-            juste vous, comme vous êtes.
+            Je photographie votre moment à deux ;<br />
+            votre complicité, votre amour, dans un lieu qui vous ressemble.
           </p>
+          <p class="presta-desc">
+            Je fige l'instant présent.<br />
+            Je raconte votre histoire.
+          </p>
+          <p class="presta-section-label">Expérience</p>
           <ul class="presta-includes">
-            <li>Séance de 1h30 en extérieur ou en studio</li>
-            <li>Galerie privée en ligne</li>
-            <li>Photos retouchées livrées sous 2 semaines</li>
-            <li>Fichiers haute résolution</li>
+            <li>Prise de contact via le formulaire</li>
+            <li>Échange sur WhatsApp</li>
+            <li>Visio rapide pour poser l'intention</li>
+            <li>Puis préparation libre selon vos envies</li>
           </ul>
-          <p class="presta-price">Tarif sur devis</p>
-          <a href="#contact" class="btn">Demander un devis</a>
+          <p class="presta-section-label">La séance</p>
+          <ul class="presta-includes">
+            <li>1h30 à 2h</li>
+            <li>Dans un lieu réel — extérieur, café, appartement, train…</li>
+          </ul>
+          <p class="presta-section-label">Ce que vous recevez</p>
+          <ul class="presta-includes">
+            <li>Fichiers en haute résolution</li>
+            <li>Livraison sous 6 semaines</li>
+          </ul>
+          <p class="presta-price">500 €</p>
+          <a href="#contact" class="btn">Me contacter</a>
         </article>
 
       </div>
@@ -432,10 +462,22 @@ const brand = "Eterna";
     position: absolute; left: 0;
     color: var(--accent); font-size: 0.7rem;
   }
+  .presta-section-label {
+    font-size: 0.6rem; font-weight: 300;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 0.25rem;
+  }
   .presta-price {
-    font-size: 0.8rem; font-weight: 300;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); margin-top: auto;
+    font-size: 0.9rem; font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--ink); margin-top: auto;
+  }
+  .presta-price-note {
+    display: block;
+    font-size: 0.72rem; font-weight: 200;
+    letter-spacing: 0.02em;
+    color: var(--muted); margin-top: 0.25rem;
   }
 
   /* ── ABOUT ── */
