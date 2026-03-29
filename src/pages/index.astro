@@ -1,7 +1,6 @@
 ---
-const name = "Roxane";
-const tagline = "Photographe portrait & lifestyle";
-const location = "Paris, France";
+const brand   = "Eterna";
+const tagline = "L'intensité de l'instant, préservée pour toujours.";
 ---
 
 <!doctype html>
@@ -12,357 +11,650 @@ const location = "Paris, France";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={`${name} — ${tagline}. ${location}.`} />
-    <title>{name} — {tagline}</title>
+    <meta
+      name="description"
+      content="Eterna — Photographie d'art émotionnelle. Portraits, couples, événements privés. Une expérience photographique hors du commun."
+    />
+    <title>{brand} — Photographie d'art</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Inter:wght@200;300&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
 
-    <!-- NAV -->
+    <!-- ─── NAV ─── -->
     <header class="nav">
-      <a href="/" class="nav-logo">{name}</a>
-      <nav>
+      <a href="/" class="nav-logo">{brand}</a>
+      <nav class="nav-links">
         <a href="#portfolio">Portfolio</a>
-        <a href="#about">À propos</a>
-        <a href="#services">Prestations</a>
-        <a href="#contact">Contact</a>
+        <a href="#univers">Univers</a>
+        <a href="#prestations">Prestations</a>
+        <a href="#contact">Réserver</a>
       </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-img-wrap">
-        <!-- Placeholder image — replace with actual hero photo -->
-        <div class="hero-placeholder"></div>
-      </div>
-      <div class="hero-caption">
+    <!-- ─── HERO ─── -->
+    <section class="hero" aria-label="Présentation">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Photographie d'art</span>
+        <h1 class="hero-brand">{brand}</h1>
         <p class="hero-tagline">{tagline}</p>
-        <h1 class="hero-name">{name}</h1>
-        <a href="#portfolio" class="cta">Voir le portfolio</a>
+        <a href="#contact" class="btn">Réserver une séance</a>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="scroll-line"></span>
       </div>
     </section>
 
-    <!-- PORTFOLIO GRID -->
-    <section class="portfolio" id="portfolio">
-      <h2 class="section-title">Portfolio</h2>
-      <div class="grid">
-        {[1,2,3,4,5,6].map((i) => (
-          <div class="grid-item">
-            <div class="grid-placeholder">
-              <span>Photo {i}</span>
+    <!-- ─── MANIFESTE ─── -->
+    <section class="manifeste" id="univers" aria-label="Manifeste">
+      <div class="manifeste-inner">
+        <p class="manifeste-quote">
+          "Je ne capture pas des images.<br />Je fixe ce qui disparaît."
+        </p>
+        <div class="manifeste-divider"></div>
+        <p class="manifeste-body">
+          Chaque séance Eterna est une rencontre — avec votre vérité, avec la lumière qui vous appartient.
+          Pas de mise en scène. Pas de masque. Seulement ce qui est là, vivant,
+          dans l'espace entre deux respirations.
+        </p>
+        <p class="manifeste-body">
+          Ce que vous emporterez n'est pas une photo. C'est une preuve que vous avez existé,
+          pleinement, le temps d'un instant.
+        </p>
+      </div>
+    </section>
+
+    <!-- ─── PORTFOLIO ─── -->
+    <section class="portfolio" id="portfolio" aria-label="Portfolio">
+      <header class="section-header">
+        <span class="label">— Portfolio</span>
+        <h2 class="section-title">Fragments d'éternité</h2>
+      </header>
+      <div class="portfolio-grid">
+        <div class="pg-item pg-tall">
+          <div class="ph ph-1"></div>
+        </div>
+        <div class="pg-item">
+          <div class="ph ph-2"></div>
+        </div>
+        <div class="pg-item">
+          <div class="ph ph-3"></div>
+        </div>
+        <div class="pg-item pg-wide">
+          <div class="ph ph-4"></div>
+        </div>
+        <div class="pg-item">
+          <div class="ph ph-5"></div>
+        </div>
+        <div class="pg-item pg-tall">
+          <div class="ph ph-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRESTATIONS ─── -->
+    <section class="prestations" id="prestations" aria-label="Prestations">
+      <header class="section-header">
+        <span class="label">— Prestations</span>
+        <h2 class="section-title">Ce que nous créons ensemble</h2>
+      </header>
+      <div class="presta-list">
+        <article class="presta-item">
+          <span class="presta-num">01</span>
+          <div class="presta-body">
+            <h3>Portraits Intimistes</h3>
+            <p>
+              Une séance construite autour de vous. En studio ou en extérieur,
+              dans la lumière qui vous ressemble. Pour les individus, les artistes,
+              les âmes qui cherchent à se retrouver.
+            </p>
+          </div>
+          <a href="#contact" class="presta-link" aria-label="Réserver un portrait intimiste">→</a>
+        </article>
+        <article class="presta-item">
+          <span class="presta-num">02</span>
+          <div class="presta-body">
+            <h3>Couples &amp; Liens</h3>
+            <p>
+              L'amour tel qu'il se vit vraiment — sans pose, sans distance.
+              Une errance photographique à deux, dans les lieux qui vous appartiennent.
+            </p>
+          </div>
+          <a href="#contact" class="presta-link" aria-label="Réserver une séance couple">→</a>
+        </article>
+        <article class="presta-item">
+          <span class="presta-num">03</span>
+          <div class="presta-body">
+            <h3>Événements Privés</h3>
+            <p>
+              Cérémonies, célébrations, moments de passage. Je documente ce qui
+              ne se répète pas — avec la discrétion et l'acuité qu'il mérite.
+            </p>
+          </div>
+          <a href="#contact" class="presta-link" aria-label="Réserver un reportage événement">→</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── EXPÉRIENCE ─── -->
+    <section class="experience" aria-label="Expérience client">
+      <div class="experience-inner">
+        <header class="section-header">
+          <span class="label">— L'expérience</span>
+          <h2 class="section-title">Une séance Eterna</h2>
+        </header>
+        <ol class="exp-steps">
+          <li class="exp-step">
+            <span class="exp-num">I</span>
+            <div>
+              <h4>Consultation</h4>
+              <p>Un échange pour comprendre ce que vous voulez garder. Pas un brief — une conversation.</p>
+            </div>
+          </li>
+          <li class="exp-step">
+            <span class="exp-num">II</span>
+            <div>
+              <h4>La séance</h4>
+              <p>Un espace sans jugement, sans urgence. Vous arrivez. La lumière fait le reste.</p>
+            </div>
+          </li>
+          <li class="exp-step">
+            <span class="exp-num">III</span>
+            <div>
+              <h4>Galerie privée</h4>
+              <p>Une sélection livrée dans une galerie en ligne dédiée. Tirages disponibles sur demande.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="contact" id="contact" aria-label="Réservation">
+      <div class="contact-inner">
+        <header class="section-header section-header--center">
+          <span class="label">— Contact</span>
+          <h2 class="section-title">Commençons ensemble</h2>
+          <p class="contact-sub">
+            Parlez-moi de votre projet. Je vous réponds sous 48 h.
+          </p>
+        </header>
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="visually-hidden">
+            <label>Ne pas remplir : <input name="bot-field" /></label>
+          </p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Nom</label>
+              <input id="name" type="text" name="name" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" required autocomplete="email" />
             </div>
           </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="about-inner">
-        <div class="about-img-wrap">
-          <div class="about-placeholder"></div>
-        </div>
-        <div class="about-text">
-          <h2 class="section-title">À propos</h2>
-          <p>
-            Je suis {name}, photographe basée à {location}. Je capture des moments
-            authentiques et des émotions vraies — portrait, lifestyle, et reportages.
-          </p>
-          <p>
-            Mon approche est douce et attentive. Je crée un espace où vous pouvez
-            être entièrement vous-même devant l'objectif.
-          </p>
-          <a href="#contact" class="cta cta--outline">Prendre contact</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-      <h2 class="section-title">Prestations</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Portrait</h3>
-          <p>Séance individuelle ou en couple, en studio ou en extérieur.</p>
-        </div>
-        <div class="service-card">
-          <h3>Lifestyle & Famille</h3>
-          <p>Moments du quotidien, complicité, souvenirs qui durent.</p>
-        </div>
-        <div class="service-card">
-          <h3>Reportage</h3>
-          <p>Événements, naissances, petites cérémonies intimes.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-      <div class="contact-inner">
-        <h2 class="section-title">Contact</h2>
-        <p class="contact-sub">Un projet ? Une question ? Écrivez-moi.</p>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Votre nom" required />
-            <input type="email" name="email" placeholder="Votre email" required />
+          <div class="form-field">
+            <label for="project">Votre projet</label>
+            <select id="project" name="project">
+              <option value="">— Choisir une prestation</option>
+              <option value="portrait">Portrait intimiste</option>
+              <option value="couple">Couple &amp; liens</option>
+              <option value="evenement">Événement privé</option>
+              <option value="autre">Autre</option>
+            </select>
           </div>
-          <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-          <button type="submit" class="cta">Envoyer</button>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--full">Envoyer</button>
         </form>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ─── FOOTER ─── -->
     <footer class="footer">
-      <p>&copy; {new Date().getFullYear()} {name}. Tous droits réservés.</p>
-      <div class="footer-links">
-        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-      </div>
+      <span class="footer-brand">{brand}</span>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Eterna. Tous droits réservés.</p>
+      <a
+        class="footer-ig"
+        href="https://instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram Eterna"
+      >Instagram</a>
     </footer>
 
   </body>
 </html>
 
 <style is:global>
+  /* ── RESET & BASE ─────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
   :root {
-    --color-bg: #faf9f7;
-    --color-text: #1a1a18;
-    --color-muted: #6b6860;
-    --color-border: #e2dfd8;
-    --color-accent: #1a1a18;
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Inter', system-ui, sans-serif;
+    --bg:       #0d0c0a;
+    --surface:  #141310;
+    --text:     #f0ece6;
+    --muted:    #7a756e;
+    --gold:     #c9a96e;
+    --border:   rgba(240,236,230,0.08);
+    --serif:    'Cormorant Garamond', Georgia, serif;
+    --sans:     'Inter', system-ui, sans-serif;
+    --transition: 0.35s cubic-bezier(0.25,0.1,0.25,1);
   }
-
-  html { scroll-behavior: smooth; }
 
   body {
-    background: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-sans);
-    font-weight: 300;
-    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 200;
+    line-height: 1.7;
   }
 
-  /* NAV */
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;
+  }
+
+  /* ── NAV ──────────────────────────────────────── */
   .nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 3rem;
-    background: rgba(250,249,247,0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--color-border);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 4rem;
+    background: rgba(13,12,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
   }
   .nav-logo {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    color: var(--color-text);
-  }
-  .nav nav {
-    display: flex;
-    gap: 2rem;
-  }
-  .nav nav a {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 200;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--color-muted);
-    transition: color 0.2s;
+    color: var(--text);
   }
-  .nav nav a:hover { color: var(--color-text); }
+  .nav-links { display: flex; gap: 2.5rem; }
+  .nav-links a {
+    font-size: 0.68rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--text); }
 
-  /* HERO */
+  /* ── HERO ─────────────────────────────────────── */
   .hero {
     position: relative;
-    height: 100vh;
+    height: 100svh;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
     overflow: hidden;
   }
-  .hero-img-wrap {
-    position: absolute;
-    inset: 0;
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, #1a1710 0%, #0a0908 60%, #070605 100%);
   }
-  .hero-placeholder {
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, #d4cfc7 0%, #bab4a8 100%);
+  /* Texture grain subtil */
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
   }
-  .hero-caption {
-    position: absolute;
-    bottom: 10%;
-    left: 3rem;
-    color: #fff;
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(13,12,10,0.9) 0%, transparent 55%);
+  }
+  .hero-content {
+    position: relative; z-index: 1;
+    padding: 0 4rem 8rem;
+  }
+  .hero-eyebrow {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .hero-brand {
+    font-family: var(--serif);
+    font-size: clamp(5rem, 14vw, 13rem);
+    font-weight: 200;
+    line-height: 0.9;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--text);
   }
   .hero-tagline {
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.8;
-    margin-bottom: 0.5rem;
-  }
-  .hero-name {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 8vw, 7rem);
-    font-weight: 300;
-    line-height: 1;
-    margin-bottom: 1.5rem;
-  }
-
-  /* CTA */
-  .cta {
-    display: inline-block;
-    padding: 0.7rem 2rem;
-    background: var(--color-accent);
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    border: 1px solid var(--color-accent);
-    transition: background 0.2s, color 0.2s;
-    cursor: pointer;
-  }
-  .cta:hover { background: transparent; color: var(--color-accent); }
-  .cta--outline {
-    background: transparent;
-    color: var(--color-accent);
-  }
-  .cta--outline:hover { background: var(--color-accent); color: #fff; }
-
-  /* SECTIONS */
-  section { padding: 6rem 3rem; }
-  .section-title {
-    font-family: var(--font-serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-weight: 200;
+    color: rgba(240,236,230,0.6);
+    max-width: 42ch;
     margin-bottom: 2.5rem;
   }
 
-  /* PORTFOLIO GRID */
-  .portfolio { background: #f0ede8; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; right: 4rem;
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
   }
-  .grid-placeholder {
-    aspect-ratio: 4/5;
-    background: #d4cfc7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-muted);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    transition: transform 0.3s;
+  .scroll-line {
+    display: block; width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2.4s ease-in-out infinite;
   }
-  .grid-item:hover .grid-placeholder { transform: scale(1.01); }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.2; transform: scaleY(0.6); transform-origin: top; }
+    50%       { opacity: 0.8; transform: scaleY(1);   transform-origin: top; }
+  }
 
-  /* ABOUT */
-  .about-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .about-placeholder {
-    aspect-ratio: 3/4;
-    background: linear-gradient(160deg, #d4cfc7 0%, #bab4a8 100%);
-  }
-  .about-text p {
-    color: var(--color-muted);
-    margin-bottom: 1rem;
-    max-width: 38ch;
-  }
-  .about-text .cta { margin-top: 1rem; }
-
-  /* SERVICES */
-  .services { background: #f0ede8; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1100px;
-  }
-  .service-card {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.5rem;
-  }
-  .service-card h3 {
-    font-family: var(--font-serif);
-    font-size: 1.4rem;
+  /* ── BUTTONS ──────────────────────────────────── */
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    font-family: var(--sans);
+    font-size: 0.7rem;
     font-weight: 300;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
   }
-  .service-card p { color: var(--color-muted); font-size: 0.9rem; }
+  .btn:hover { background: var(--gold); color: var(--bg); }
+  .btn--full { width: 100%; text-align: center; }
 
-  /* CONTACT */
-  .contact-inner { max-width: 640px; }
-  .contact-sub {
-    color: var(--color-muted);
+  /* ── SECTION SHARED ───────────────────────────── */
+  section { padding: 8rem 4rem; }
+
+  .section-header { margin-bottom: 4rem; }
+  .section-header--center { text-align: center; }
+
+  .label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 200;
+    line-height: 1.1;
+    color: var(--text);
+  }
+
+  /* ── MANIFESTE ────────────────────────────────── */
+  .manifeste {
+    background: var(--surface);
+    text-align: center;
+  }
+  .manifeste-inner { max-width: 680px; margin: 0 auto; }
+  .manifeste-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-style: italic;
+    font-weight: 200;
+    line-height: 1.4;
+    color: var(--text);
     margin-bottom: 2rem;
   }
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    background: transparent;
-    font-family: var(--font-sans);
+  .manifeste-divider {
+    width: 40px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 2rem;
+  }
+  .manifeste-body {
     font-size: 0.9rem;
-    color: var(--color-text);
-    outline: none;
-    transition: border-color 0.2s;
+    font-weight: 200;
+    color: var(--muted);
+    max-width: 52ch;
+    margin: 0 auto 1rem;
+    line-height: 1.9;
   }
-  .contact-form input:focus,
-  .contact-form textarea:focus { border-color: var(--color-text); }
-  .contact-form textarea { resize: vertical; }
-  .contact-form button { align-self: flex-start; }
 
-  /* FOOTER */
-  .footer {
-    padding: 2rem 3rem;
-    display: flex;
-    justify-content: space-between;
+  /* ── PORTFOLIO ────────────────────────────────── */
+  .portfolio { background: var(--bg); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 320px 240px;
+    gap: 3px;
+  }
+  .pg-item { overflow: hidden; }
+  .pg-tall { grid-row: span 2; }
+  .pg-wide { grid-column: span 2; }
+
+  .ph {
+    width: 100%; height: 100%;
+    transition: transform 0.7s cubic-bezier(0.25,0.1,0.25,1);
+  }
+  .pg-item:hover .ph { transform: scale(1.03); }
+
+  /* Placeholder gradients — cinématiques, chaque image différente */
+  .ph-1 { background: linear-gradient(145deg,#1c1815 0%,#2a2218 50%,#0f0d0b 100%); }
+  .ph-2 { background: linear-gradient(200deg,#1a1614 0%,#251e18 100%); }
+  .ph-3 { background: linear-gradient(110deg,#120f0d 0%,#1e1a16 100%); }
+  .ph-4 { background: linear-gradient(160deg,#18150f 0%,#2c2418 50%,#0e0c09 100%); }
+  .ph-5 { background: linear-gradient(220deg,#1b1611 0%,#100e0b 100%); }
+  .ph-6 { background: linear-gradient(135deg,#0f0d0a 0%,#201a14 100%); }
+
+  /* ── PRESTATIONS ──────────────────────────────── */
+  .prestations { background: var(--surface); }
+  .presta-list { display: flex; flex-direction: column; gap: 0; }
+  .presta-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 40px;
     align-items: center;
-    border-top: 1px solid var(--color-border);
-    font-size: 0.8rem;
-    color: var(--color-muted);
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: background var(--transition);
   }
-  .footer-links a {
-    color: var(--color-muted);
+  .presta-item:first-child { border-top: 1px solid var(--border); }
+  .presta-num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--gold);
+    opacity: 0.5;
+  }
+  .presta-body h3 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 200;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+    transition: color var(--transition);
+  }
+  .presta-item:hover .presta-body h3 { color: var(--gold); }
+  .presta-body p {
+    font-size: 0.85rem;
+    font-weight: 200;
+    color: var(--muted);
+    max-width: 55ch;
+    line-height: 1.8;
+  }
+  .presta-link {
+    font-size: 1.3rem;
+    color: var(--muted);
     text-decoration: none;
+    justify-self: end;
+    transition: color var(--transition), transform var(--transition);
   }
-  .footer-links a:hover { color: var(--color-text); }
+  .presta-item:hover .presta-link { color: var(--gold); transform: translateX(4px); }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .nav { padding: 1rem 1.5rem; }
-    .nav nav { gap: 1rem; }
-    section { padding: 4rem 1.5rem; }
-    .hero-caption { left: 1.5rem; }
-    .grid { grid-template-columns: repeat(2, 1fr); }
-    .about-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .services-grid { grid-template-columns: 1fr; }
+  /* ── EXPÉRIENCE ───────────────────────────────── */
+  .experience { background: var(--bg); }
+  .experience-inner { max-width: 760px; }
+  .exp-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .exp-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .exp-step:first-child { border-top: 1px solid var(--border); }
+  .exp-num {
+    font-family: var(--serif);
+    font-size: 0.85rem;
+    font-weight: 200;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    padding-top: 0.2rem;
+  }
+  .exp-step h4 {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 200;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+  .exp-step p {
+    font-size: 0.85rem;
+    font-weight: 200;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ── CONTACT ──────────────────────────────────── */
+  .contact { background: var(--surface); }
+  .contact-inner { max-width: 640px; margin: 0 auto; }
+  .contact-sub {
+    font-size: 0.85rem;
+    font-weight: 200;
+    color: var(--muted);
+    margin-top: 0.75rem;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 3rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-field label {
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 0;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 200;
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+  }
+  .contact-form select {
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  .contact-form select option { background: var(--surface); color: var(--text); }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus { border-bottom-color: var(--gold); }
+  .contact-form textarea { resize: vertical; }
+
+  /* ── FOOTER ───────────────────────────────────── */
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+  }
+  .footer-brand {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 200;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+  .footer-copy {
+    font-size: 0.7rem;
+    font-weight: 200;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-align: center;
+  }
+  .footer-ig {
+    font-size: 0.68rem;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    text-align: right;
+    transition: color var(--transition);
+  }
+  .footer-ig:hover { color: var(--gold); }
+
+  /* ── RESPONSIVE ───────────────────────────────── */
+  @media (max-width: 900px) {
+    .nav { padding: 1.2rem 2rem; }
+    .nav-links { gap: 1.5rem; }
+    section { padding: 5rem 2rem; }
+    .hero-content { padding: 0 2rem 6rem; }
+    .hero-scroll { right: 2rem; }
+    .portfolio-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .pg-tall, .pg-wide { grid-row: auto; grid-column: auto; }
+    .presta-item { grid-template-columns: 50px 1fr 30px; gap: 1rem; }
+    .footer { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+    .footer-ig { text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .portfolio-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .hero-brand { font-size: clamp(4rem, 20vw, 7rem); }
   }
 </style>
