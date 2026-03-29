@@ -42,7 +42,25 @@ const brand = "Eterna";
           <a href="/en/" class="lang-link">EN</a>
         </div>
       </div>
+      <button class="nav-mobile-btn" id="mobile-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </header>
+
+    <!-- MENU MOBILE -->
+    <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+      <nav class="mobile-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#prestations">Prestations</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="mobile-lang">
+        <span class="lang-link lang-active">FR</span>
+        <span class="lang-dot" aria-hidden="true">·</span>
+        <a href="/en/" class="lang-link">EN</a>
+      </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero" aria-label="Introduction">
@@ -243,6 +261,7 @@ const brand = "Eterna";
     </footer>
 
     <script>
+      // Nav scroll
       const nav  = document.getElementById('nav');
       const hero = document.querySelector('.hero');
       if (nav && hero) {
@@ -250,6 +269,22 @@ const brand = "Eterna";
           ([e]) => nav.classList.toggle('nav--solid', !e.isIntersecting),
           { threshold: 0.05 }
         ).observe(hero);
+      }
+
+      // Menu mobile
+      const mobileBtn  = document.getElementById('mobile-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        function toggleMenu(open) {
+          mobileBtn.classList.toggle('open', open);
+          mobileMenu.classList.toggle('open', open);
+          mobileBtn.setAttribute('aria-expanded', String(open));
+          mobileMenu.setAttribute('aria-hidden', String(!open));
+          document.body.style.overflow = open ? 'hidden' : '';
+        }
+        mobileBtn.addEventListener('click', () => toggleMenu(!mobileMenu.classList.contains('open')));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
       }
     </script>
 
