@@ -1,10 +1,10 @@
 ---
-import '../styles/site.css';
+import '../../styles/site.css';
 const brand = "Eterna";
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,10 +13,10 @@ const brand = "Eterna";
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Eterna — Photographie de mariage et de couple. L'instant préservé pour toujours."
+      content="Eterna — Wedding & couple photography by Roxane. Every moment, preserved forever."
     />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <title>{brand} — Photographie de mariage et de couple</title>
+    <link rel="alternate" hreflang="fr" href="/" />
+    <title>{brand} — Wedding &amp; Couple Photography</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,18 +28,18 @@ const brand = "Eterna";
 
     <!-- NAV -->
     <header class="nav" id="nav">
-      <a href="/" class="nav-logo">{brand}</a>
+      <a href="/en/" class="nav-logo">{brand}</a>
       <div class="nav-right">
         <nav>
           <a href="#portfolio">Portfolio</a>
-          <a href="#prestations">Prestations</a>
+          <a href="#services">Services</a>
           <a href="#about">About Me</a>
           <a href="#contact">Contact</a>
         </nav>
-        <div class="lang-switch" aria-label="Langue">
-          <span class="lang-link lang-active" aria-current="true">FR</span>
+        <div class="lang-switch" aria-label="Language">
+          <a href="/" class="lang-link">FR</a>
           <span class="lang-dot" aria-hidden="true">·</span>
-          <a href="/en/" class="lang-link">EN</a>
+          <span class="lang-link lang-active" aria-current="true">EN</span>
         </div>
       </div>
     </header>
@@ -51,7 +51,7 @@ const brand = "Eterna";
       <div class="hero-content">
         <h1 class="hero-brand">{brand}</h1>
         <p class="hero-byline"><span class="by">by</span> <span class="roxane">Roxane</span></p>
-        <p class="hero-specialty">Photographie de mariage et de couple</p>
+        <p class="hero-specialty">Wedding &amp; Couple Photography</p>
       </div>
     </section>
 
@@ -69,68 +69,68 @@ const brand = "Eterna";
       </div>
     </section>
 
-    <!-- PRESTATIONS -->
-    <section class="section" id="prestations">
+    <!-- SERVICES -->
+    <section class="section" id="services">
       <div class="section-head">
-        <h2 class="title">Prestations</h2>
+        <h2 class="title">Services</h2>
       </div>
       <div class="presta-grid">
 
         <article class="presta-card">
-          <h3 class="presta-title">Mariage</h3>
+          <h3 class="presta-title">Wedding</h3>
           <p class="presta-desc">
-            Je capture votre journée comme vous la vivez ;<br />
-            dans le désordre, la tendresse, le chaos, la vérité des moments.
+            I capture your day as you live it —<br />
+            the chaos, the tenderness, the truth of every moment.
           </p>
-          <p class="presta-section-label">Expérience</p>
+          <p class="presta-section-label">Experience</p>
           <ul class="presta-includes">
-            <li>Prise de contact via le formulaire</li>
-            <li>Échange sur WhatsApp</li>
-            <li>Visio pour découvrir votre histoire</li>
-            <li>Puis échanges libres, autant que nécessaire jusqu'au jour J</li>
+            <li>Reach out through the contact form</li>
+            <li>A conversation on WhatsApp</li>
+            <li>A video call to hear your story</li>
+            <li>Then open exchanges, as much as you need, until the day</li>
           </ul>
-          <p class="presta-section-label">Ce que vous recevez</p>
+          <p class="presta-section-label">What you receive</p>
           <ul class="presta-includes">
-            <li>Reportage complet de la journée</li>
-            <li>Fichiers en haute résolution</li>
-            <li>Livraison sous 6 semaines</li>
-            <li>Un print sélectionné par mon regard</li>
+            <li>Full-day coverage</li>
+            <li>High-resolution files</li>
+            <li>Delivery within 6 weeks</li>
+            <li>One print, chosen by my eye</li>
           </ul>
           <p class="presta-price">
-            À partir de 2 200 €
-            <span class="presta-price-note">Frais de déplacement et hébergement en supplément si nécessaire.</span>
+            From 2,200 €
+            <span class="presta-price-note">Travel and accommodation costs may apply.</span>
           </p>
-          <a href="#contact" class="btn">Me contacter</a>
+          <a href="#contact" class="btn">Get in touch</a>
         </article>
 
         <article class="presta-card">
-          <h3 class="presta-title">Couple</h3>
+          <h3 class="presta-title">Couple Session</h3>
           <p class="presta-desc">
-            Je capture votre moment à deux ;<br />
-            votre complicité, votre amour, dans un lieu qui vous ressemble.
+            I capture your moment together —<br />
+            your closeness, your love, in a place that feels like you.
           </p>
-          <p class="presta-section-label">Expérience</p>
+          <p class="presta-section-label">Experience</p>
           <ul class="presta-includes">
-            <li>Prise de contact via le formulaire</li>
-            <li>Échange sur WhatsApp</li>
-            <li>Visio rapide pour poser l'intention</li>
-            <li>Puis préparation libre selon vos envies</li>
+            <li>Reach out through the contact form</li>
+            <li>A conversation on WhatsApp</li>
+            <li>A quick video call to set the intention</li>
+            <li>Then free preparation, on your own terms</li>
           </ul>
-          <p class="presta-section-label">La séance</p>
+          <p class="presta-section-label">The session</p>
           <ul class="presta-includes">
-            <li>1h30 à 2h</li>
-            <li>Dans un lieu réel : café, appartement, train, etc.</li>
+            <li>1.5 to 2 hours</li>
+            <li>In a real place: a café, your flat, a train…</li>
           </ul>
-          <p class="presta-section-label">Ce que vous recevez</p>
+          <p class="presta-section-label">What you receive</p>
           <ul class="presta-includes">
-            <li>Fichiers en haute résolution</li>
-            <li>Livraison sous 6 semaines</li>
+            <li>High-resolution files</li>
+            <li>Delivery within 6 weeks</li>
           </ul>
           <p class="presta-price">
-            À partir de 500 €
-            <span class="presta-price-note">Frais de déplacement et hébergement en supplément si nécessaire.</span>
+            From 500 €
+            <span class="presta-price-note">Travel and accommodation costs may apply.</span>
           </p>
-          <a href="#contact" class="btn">Me contacter</a>
+          <a href="#contact" class="btn">Get in touch</a>
         </article>
 
       </div>
@@ -145,28 +145,28 @@ const brand = "Eterna";
         <div class="about-text">
           <h2 class="title">About Me</h2>
           <p>
-            À travers mon regard, je cherche à préserver ce qui vous lie :
-            l'intensité d'une émotion, la profondeur d'un regard, la beauté de votre amour.
+            Through my lens, I look for what connects you — the intensity of an emotion,
+            the depth of a gaze, the beauty of your love.
           </p>
           <p>
-            Je ne capture pas la perfection.<br />
-            Je capture ce qui est vrai, profond, ce qui se ressent.
+            I don't capture perfection.<br />
+            I capture what is true, what runs deep, what you can feel.
           </p>
           <p>
-            Mon regard se nourrit de tout ce qui m'entoure.
-            Un coucher de soleil, une lumière qui disparaît, un paysage, une atmosphère.
+            My eye is shaped by everything around me —
+            a setting sun, a fading light, a landscape, an atmosphere.
           </p>
           <p>
-            Je m'inspire de la pellicule :
-            de la texture, du grain, des tons doux, des couleurs réelles.
+            I draw from film photography:
+            texture, grain, soft tones, real colours.
           </p>
           <p>
-            Je travaille dans une relation de confiance,
-            discrète, présente quand il le faut, invisible quand c'est nécessaire.
+            I work with care and trust,
+            discreet when needed, present when it matters.
           </p>
-          <p class="about-location">Basée sur la Côte d'Azur — disponible partout.</p>
-          <p class="about-sign">À très vite,<br />Roxane</p>
-          <a href="#contact" class="btn btn--outline">Me contacter</a>
+          <p class="about-location">Based on the French Riviera — available everywhere.</p>
+          <p class="about-sign">See you soon,<br />Roxane</p>
+          <a href="#contact" class="btn btn--outline">Get in touch</a>
         </div>
       </div>
     </section>
@@ -178,17 +178,17 @@ const brand = "Eterna";
           <h2 class="title">Contact</h2>
         </div>
         <form
-          name="contact"
+          name="contact-en"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact" />
-          <p class="sr-only"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+          <input type="hidden" name="form-name" value="contact-en" />
+          <p class="sr-only"><label>Do not fill in: <input name="bot-field" /></label></p>
 
           <div class="form-row">
             <div class="field">
-              <label for="name">Prénom &amp; Nom</label>
+              <label for="name">First &amp; Last Name</label>
               <input id="name" type="text" name="name" required autocomplete="name" />
             </div>
             <div class="field">
@@ -198,39 +198,39 @@ const brand = "Eterna";
           </div>
           <div class="form-row">
             <div class="field">
-              <label for="phone">Téléphone</label>
+              <label for="phone">Phone</label>
               <input id="phone" type="tel" name="phone" required autocomplete="tel" />
             </div>
             <div class="field">
-              <label for="project">Projet</label>
+              <label for="project">Project</label>
               <select id="project" name="project" required>
-                <option value="" disabled selected>Mariage ou couple ?</option>
-                <option value="mariage">Mariage</option>
-                <option value="couple">Couple</option>
+                <option value="" disabled selected>Wedding or couple session?</option>
+                <option value="wedding">Wedding</option>
+                <option value="couple">Couple session</option>
               </select>
             </div>
           </div>
           <div class="form-row">
             <div class="field">
               <label for="date">Date</label>
-              <input id="date" type="text" name="date" required placeholder="JJ/MM/AAAA" />
+              <input id="date" type="text" name="date" required placeholder="DD/MM/YYYY" />
             </div>
             <div class="field">
-              <label for="lieu">Lieu</label>
-              <input id="lieu" type="text" name="lieu" required placeholder="ex : Paris, Normandie…" />
+              <label for="lieu">Location</label>
+              <input id="lieu" type="text" name="lieu" required placeholder="e.g. Paris, Normandy…" />
             </div>
           </div>
           <div class="field">
             <label for="message">Message</label>
             <textarea
               id="message" name="message" rows="5" required
-              placeholder="Parlez-moi de votre histoire."
+              placeholder="Tell me about your story."
             ></textarea>
           </div>
-          <button type="submit" class="btn">Envoyer</button>
+          <button type="submit" class="btn">Send</button>
         </form>
         <p class="contact-ig">
-          Retrouvez-moi sur
+          Find me on
           <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </p>
       </div>
@@ -239,7 +239,7 @@ const brand = "Eterna";
     <!-- FOOTER -->
     <footer class="footer">
       <span class="footer-logo">{brand}</span>
-      <span class="footer-copy">&copy; {new Date().getFullYear()} Eterna. Tous droits réservés.</span>
+      <span class="footer-copy">&copy; {new Date().getFullYear()} Eterna. All rights reserved.</span>
     </footer>
 
     <script>
