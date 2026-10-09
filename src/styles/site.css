@@ -432,6 +432,17 @@ form button { align-self: flex-start; }
 .nav-mobile.open {
   opacity: 1; pointer-events: all;
 }
+/* Logomark Night Bordeaux, grand, coupé par le coin bas droit (demande de Valentin, 9 octobre 2026) */
+.nav-mobile { overflow: hidden; }
+.nav-mobile-mark {
+  position: absolute;
+  right: -24vw; bottom: -7vh;
+  width: 82vw; max-width: 460px;
+  color: var(--bordeaux);
+  pointer-events: none;
+}
+.nav-mobile-mark svg { width: 100%; height: auto; }
+.mobile-links, .mobile-lang { position: relative; z-index: 1; }
 .mobile-links {
   display: flex; flex-direction: column;
   align-items: center; gap: 0.25rem;
