@@ -1,6 +1,9 @@
 /* Eterna — charte graphique Mayü Studio (août-septembre 2026)
    Couleurs : Dark Violet, Night Bordeaux, Dusty Lavender, Beige Sand, Soft Linen — rien d'autre.
-   Polices  : Poppins (titres et textes), Lekton (infos secondaires, textes courts).
+   Polices  : Poppins (titres et textes), Lekton (infos secondaires, textes courts),
+              Palmera Dirham (manuscrite, à petites doses : « by Roxane », la signature).
+              Palmera Dirham : fichier du kit Mayü Studio, marqué licence démo « personal use only » ;
+              ajoutée à la demande de Valentin (9 octobre 2026) en attendant de confirmer la licence.
    Logos    : src/assets/*.svg, en currentColor, colorés selon les associations de la charte :
               Dark Violet → logo Soft Linen ou Dusty Lavender · Night Bordeaux → Beige Sand ·
               Beige Sand → Dark Violet · Soft Linen → Dark Violet ou Beige Sand. */
@@ -11,6 +14,7 @@
 @font-face { font-family: 'Poppins'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/Poppins-Medium.woff2') format('woff2'); }
 @font-face { font-family: 'Lekton'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/Lekton-Regular.woff2') format('woff2'); }
 @font-face { font-family: 'Lekton'; font-weight: 400; font-style: italic; font-display: swap; src: url('/fonts/Lekton-Italic.woff2') format('woff2'); }
+@font-face { font-family: 'Palmera Dirham'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/PalmeraDirham.woff2') format('woff2'); }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
@@ -30,6 +34,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
   --sans: 'Poppins', system-ui, sans-serif;
   --mono: 'Lekton', ui-monospace, 'SFMono-Regular', monospace;
+  --script: 'Palmera Dirham', 'Snell Roundhand', cursive;
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -148,12 +153,11 @@ svg { display: block; }
 }
 .hero-brand svg { width: 100%; height: auto; }
 .hero-byline {
-  font-family: var(--mono);
-  font-style: italic;
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-  letter-spacing: 0.08em;
+  font-family: var(--script);
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  line-height: 1.2;
   color: var(--sand);
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 .hero-specialty {
   font-family: var(--mono);
@@ -311,10 +315,10 @@ svg { display: block; }
   color: var(--ink);
 }
 .about-text .about-sign {
-  font-family: var(--mono);
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--ink); line-height: 1.5;
+  font-family: var(--script);
+  font-size: 1.7rem;
+  color: var(--ink); line-height: 1.35;
+  margin-top: 0.4rem;
 }
 .about-sign-mark {
   display: block;
