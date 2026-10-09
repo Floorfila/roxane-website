@@ -1,6 +1,11 @@
 ---
 import '../../styles/site.css';
+import logo from '../../assets/eterna-logo.svg?raw';
+import wordmark from '../../assets/eterna-wordmark.svg?raw';
+import monogram from '../../assets/eterna-monogram.svg?raw';
+import logomark from '../../assets/eterna-logomark.svg?raw';
 const brand = "Eterna";
+const tagline = "Quietly observe what matters most";
 ---
 
 <!doctype html>
@@ -8,7 +13,9 @@ const brand = "Eterna";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#160910" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta
@@ -17,18 +24,14 @@ const brand = "Eterna";
     />
     <link rel="alternate" hreflang="fr" href="/" />
     <title>{brand} — Wedding &amp; Couple Photography</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;1,200;1,300&family=Inter:wght@200;300&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Lekton-Regular.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
 
     <!-- NAV -->
     <header class="nav" id="nav">
-      <a href="/en/" class="nav-logo">{brand}</a>
+      <a href="/en/" class="nav-logo" aria-label="Eterna — home"><Fragment set:html={wordmark} /></a>
       <div class="nav-right">
         <nav>
           <a href="#portfolio">Portfolio</a>
@@ -67,8 +70,8 @@ const brand = "Eterna";
       <div class="hero-img" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="hero-brand">{brand}</h1>
-        <p class="hero-byline"><span class="by">by</span> <span class="roxane">Roxane</span></p>
+        <h1 class="hero-brand"><span class="sr-only">{brand}. {tagline}.</span><Fragment set:html={logo} /></h1>
+        <p class="hero-byline">by Roxane</p>
         <p class="hero-specialty">Wedding &amp; Couple Photography</p>
       </div>
     </section>
@@ -81,7 +84,7 @@ const brand = "Eterna";
       <div class="gallery">
         {Array.from({ length: 9 }).map((_, i) => (
           <div class="gallery-item">
-            <div class={`gallery-ph gallery-ph-${i + 1}`}></div>
+            <div class={`gallery-ph gallery-ph-${i + 1}`}><Fragment set:html={logomark} /></div>
           </div>
         ))}
       </div>
@@ -158,7 +161,7 @@ const brand = "Eterna";
     <section class="section" id="about">
       <div class="about-grid">
         <div class="about-img-wrap">
-          <div class="about-img-ph" aria-hidden="true"></div>
+          <div class="about-img-ph" aria-hidden="true"><Fragment set:html={logomark} /></div>
         </div>
         <div class="about-text">
           <h2 class="title">About Me</h2>
@@ -183,7 +186,7 @@ const brand = "Eterna";
             discreet when needed, present when it matters.
           </p>
           <p class="about-location">Based on the French Riviera, available everywhere.</p>
-          <p class="about-sign">See you soon,<br />Roxane</p>
+          <p class="about-sign">See you soon,<br />Roxane<span class="about-sign-mark" aria-hidden="true"><Fragment set:html={monogram} /></span></p>
           <a href="#contact" class="btn btn--outline">Get in touch</a>
         </div>
       </div>
@@ -256,7 +259,7 @@ const brand = "Eterna";
 
     <!-- FOOTER -->
     <footer class="footer">
-      <span class="footer-logo">{brand}</span>
+      <span class="footer-logo" role="img" aria-label={`${brand} — ${tagline}`}><Fragment set:html={logo} /></span>
       <span class="footer-copy">&copy; {new Date().getFullYear()} Eterna. All rights reserved.</span>
     </footer>
 

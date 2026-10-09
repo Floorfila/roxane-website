@@ -1,6 +1,11 @@
 ---
 import '../styles/site.css';
+import logo from '../assets/eterna-logo.svg?raw';
+import wordmark from '../assets/eterna-wordmark.svg?raw';
+import monogram from '../assets/eterna-monogram.svg?raw';
+import logomark from '../assets/eterna-logomark.svg?raw';
 const brand = "Eterna";
+const tagline = "Quietly observe what matters most";
 ---
 
 <!doctype html>
@@ -8,7 +13,9 @@ const brand = "Eterna";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#160910" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta
@@ -17,18 +24,14 @@ const brand = "Eterna";
     />
     <link rel="alternate" hreflang="en" href="/en/" />
     <title>{brand} — Photographie de mariage et de couple</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;1,200;1,300&family=Inter:wght@200;300&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Lekton-Regular.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
 
     <!-- NAV -->
     <header class="nav" id="nav">
-      <a href="/" class="nav-logo">{brand}</a>
+      <a href="/" class="nav-logo" aria-label="Eterna — accueil"><Fragment set:html={wordmark} /></a>
       <div class="nav-right">
         <nav>
           <a href="#portfolio">Portfolio</a>
@@ -67,8 +70,8 @@ const brand = "Eterna";
       <div class="hero-img" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="hero-brand">{brand}</h1>
-        <p class="hero-byline"><span class="by">by</span> <span class="roxane">Roxane</span></p>
+        <h1 class="hero-brand"><span class="sr-only">{brand}. {tagline}.</span><Fragment set:html={logo} /></h1>
+        <p class="hero-byline">by Roxane</p>
         <p class="hero-specialty">Photographie de mariage et de couple</p>
       </div>
     </section>
@@ -81,7 +84,7 @@ const brand = "Eterna";
       <div class="gallery">
         {Array.from({ length: 9 }).map((_, i) => (
           <div class="gallery-item">
-            <div class={`gallery-ph gallery-ph-${i + 1}`}></div>
+            <div class={`gallery-ph gallery-ph-${i + 1}`}><Fragment set:html={logomark} /></div>
           </div>
         ))}
       </div>
@@ -97,7 +100,7 @@ const brand = "Eterna";
         <article class="presta-card">
           <h3 class="presta-title">Mariage</h3>
           <p class="presta-desc">
-            Je capture votre journée comme vous la vivez ;<br />
+            Je capture votre journée comme vous la vivez&nbsp;;<br />
             dans le désordre, la tendresse, le chaos, la vérité des moments.
           </p>
           <p class="presta-section-label">Expérience</p>
@@ -124,7 +127,7 @@ const brand = "Eterna";
         <article class="presta-card">
           <h3 class="presta-title">Couple</h3>
           <p class="presta-desc">
-            Je capture votre moment à deux ;<br />
+            Je capture votre moment à deux&nbsp;;<br />
             votre complicité, votre amour, dans un lieu qui vous ressemble.
           </p>
           <p class="presta-section-label">Expérience</p>
@@ -158,12 +161,12 @@ const brand = "Eterna";
     <section class="section" id="about">
       <div class="about-grid">
         <div class="about-img-wrap">
-          <div class="about-img-ph" aria-hidden="true"></div>
+          <div class="about-img-ph" aria-hidden="true"><Fragment set:html={logomark} /></div>
         </div>
         <div class="about-text">
           <h2 class="title">About Me</h2>
           <p>
-            À travers mon regard, je cherche à préserver ce qui vous lie :
+            À travers mon regard, je cherche à préserver ce qui vous lie&nbsp;:
             l'intensité d'une émotion, la profondeur d'un regard, la beauté de votre amour.
           </p>
           <p>
@@ -175,7 +178,7 @@ const brand = "Eterna";
             Un coucher de soleil, une lumière qui disparaît, un paysage, une atmosphère.
           </p>
           <p>
-            Je m'inspire de la pellicule :
+            Je m'inspire de la pellicule&nbsp;:
             de la texture, du grain, des tons doux, des couleurs réelles.
           </p>
           <p>
@@ -183,7 +186,7 @@ const brand = "Eterna";
             discrète, présente quand il le faut, invisible quand c'est nécessaire.
           </p>
           <p class="about-location">Basée sur la Côte d'Azur, disponible partout.</p>
-          <p class="about-sign">À très vite,<br />Roxane</p>
+          <p class="about-sign">À très vite,<br />Roxane<span class="about-sign-mark" aria-hidden="true"><Fragment set:html={monogram} /></span></p>
           <a href="#contact" class="btn btn--outline">Me contacter</a>
         </div>
       </div>
@@ -202,7 +205,7 @@ const brand = "Eterna";
           netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="contact" />
-          <p class="sr-only"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+          <p class="sr-only"><label>Ne pas remplir&nbsp;: <input name="bot-field" /></label></p>
 
           <div class="form-row">
             <div class="field">
@@ -222,7 +225,7 @@ const brand = "Eterna";
             <div class="field">
               <label for="project">Projet</label>
               <select id="project" name="project" required>
-                <option value="" disabled selected>Mariage ou couple ?</option>
+                <option value="" disabled selected>Mariage ou couple&nbsp;?</option>
                 <option value="mariage">Mariage</option>
                 <option value="couple">Couple</option>
               </select>
@@ -235,7 +238,7 @@ const brand = "Eterna";
             </div>
             <div class="field">
               <label for="lieu">Lieu</label>
-              <input id="lieu" type="text" name="lieu" required placeholder="ex : Paris, Normandie…" />
+              <input id="lieu" type="text" name="lieu" required placeholder="ex :&nbsp;Paris, Normandie…" />
             </div>
           </div>
           <div class="field">
@@ -256,7 +259,7 @@ const brand = "Eterna";
 
     <!-- FOOTER -->
     <footer class="footer">
-      <span class="footer-logo">{brand}</span>
+      <span class="footer-logo" role="img" aria-label={`${brand} — ${tagline}`}><Fragment set:html={logo} /></span>
       <span class="footer-copy">&copy; {new Date().getFullYear()} Eterna. Tous droits réservés.</span>
     </footer>
 
