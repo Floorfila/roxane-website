@@ -241,9 +241,18 @@ svg { display: block; }
 }
 .presta-title {
   font-family: var(--sans);
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   font-weight: 300; text-transform: uppercase;
   letter-spacing: 0.08em; color: var(--ink);
+}
+/* Catégorie au-dessus du nom de la prestation (À deux, Les vôtres, Pour toujours) */
+.presta-kicker {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.78rem; font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--bordeaux);
+  margin-bottom: 0.35rem;
 }
 .presta-desc {
   font-size: 0.9rem; font-weight: 300;
@@ -345,10 +354,11 @@ svg { display: block; }
   color: var(--ink); line-height: 1.35;
   margin-top: 0.4rem;
 }
+/* Logo eterna (wordmark) sous la signature, à la demande de Roxane (11 octobre 2026) */
 .about-sign-mark {
   display: block;
-  width: 64px;
-  margin-top: 0.8rem;
+  width: 150px;
+  margin-top: 0.9rem;
   color: var(--bordeaux);
 }
 .about-sign-mark svg { width: 100%; height: auto; }
