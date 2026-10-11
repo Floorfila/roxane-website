@@ -14,7 +14,7 @@ HERE = ROOT / "grille-tarifaire"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PORT = 4340
 
-DEPLACEMENT = "Le déplacement offert jusqu'à 40 km, puis 0,60 €/km"
+DEPLACEMENT = "Le déplacement, offert jusqu'à 40 km"
 
 
 def render_html():

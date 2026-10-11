@@ -1,6 +1,7 @@
 <!doctype html>
 <!-- Grille tarifaire Eterna, format story 1080 × 1920 à envoyer en message.
-     Un seul fond Night Bordeaux fondu, sans bandeaux ; logo Beige Sand (charte : sur Night Bordeaux), textes Soft Linen.
+     Fond Night Bordeaux fondu ; chaque prestation dans un cadre Soft Linen translucide ;
+     logo Beige Sand (charte : sur Night Bordeaux), textes Soft Linen.
      {{logo}} (src/assets/eterna-logo.svg) et {{deplacement}} sont injectés par build.py. -->
 <html lang="fr">
 <head>
@@ -17,10 +18,11 @@
   :root {
     --violet:   #160910;
     --bordeaux: #4A0C15;
-    --lavender: #715B6E;
     --sand:     #B1A594;
     --linen:    #EAE3D2;
-    --border:   rgba(234, 227, 210, 0.2);
+    --card:     rgba(234, 227, 210, 0.07);
+    --card-edge: rgba(234, 227, 210, 0.16);
+    --border:   rgba(234, 227, 210, 0.16);
     --sans:   'Poppins', sans-serif;
     --mono:   'Lekton', monospace;
     --script: 'Palmera Dirham', cursive;
@@ -45,54 +47,59 @@
     display: flex; flex-direction: column; align-items: center;
   }
   .logo { color: var(--sand); }
-  .logo svg { width: 460px; height: auto; display: block; }
-  .byline { font-family: var(--script); font-size: 54px; line-height: 1; color: var(--linen); margin-top: 20px; }
+  .logo svg { width: 520px; height: auto; display: block; }
+  .byline { font-family: var(--script); font-size: 34px; line-height: 1; color: var(--linen); margin-top: 18px; }
   .kicker {
-    display: flex; align-items: center; gap: 24px;
-    font-family: var(--mono); font-size: 23px; letter-spacing: 0.44em; text-transform: uppercase;
-    color: var(--sand); margin-top: 30px;
+    font-family: var(--mono); font-size: 22px; letter-spacing: 0.44em; text-transform: uppercase;
+    color: var(--sand); margin-top: 24px;
   }
-  .kicker::before, .kicker::after { content: ''; width: 72px; height: 1px; background: currentColor; opacity: 0.5; }
 
   main {
-    flex: 1; padding: 20px 104px 0;
-    display: flex; flex-direction: column; justify-content: space-evenly;
+    flex: 1; padding: 44px 72px 0;
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    padding: 30px 44px 32px;
   }
   .label {
-    font-family: var(--mono); font-size: 23px; letter-spacing: 0.32em; text-transform: uppercase;
+    font-family: var(--mono); font-size: 20px; letter-spacing: 0.32em; text-transform: uppercase;
     color: var(--sand);
   }
   .title {
-    font-size: 52px; font-weight: 300; line-height: 1.15;
+    font-size: 44px; font-weight: 300; line-height: 1.15;
     text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px;
   }
-  .desc { font-size: 27px; line-height: 1.5; color: var(--sand); margin-top: 6px; }
+  .desc { font-size: 24px; line-height: 1.5; color: var(--sand); margin-top: 4px; }
 
   .row {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 32px;
-    margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1fr auto; column-gap: 32px; align-items: baseline;
+    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);
   }
-  .what { font-size: 36px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.3; }
-  .detail {
-    display: block; font-family: var(--mono); font-size: 27px; letter-spacing: 0.02em;
-    color: var(--sand); line-height: 1.4; margin-top: 2px;
+  .what { font-size: 31px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.3; }
+  .price { font-size: 36px; font-weight: 400; letter-spacing: 0.04em; white-space: nowrap; }
+  .price small { font-size: 24px; font-weight: 300; letter-spacing: 0.02em; color: var(--sand); margin-right: 8px; }
+  .details { grid-column: 1 / -1; list-style: none; margin-top: 2px; }
+  .details li {
+    font-family: var(--mono); font-size: 24px; letter-spacing: 0.02em; line-height: 1.45;
+    color: var(--sand);
   }
-  .price { font-size: 42px; font-weight: 400; letter-spacing: 0.04em; white-space: nowrap; }
-  .price small { font-size: 27px; font-weight: 300; letter-spacing: 0.02em; color: var(--sand); margin-right: 10px; }
 
-  .included ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+  .included { padding: 30px 45px 0; }
+  .included ul { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
   .included li {
-    font-family: var(--mono); font-size: 28px; line-height: 1.35;
-    padding-left: 34px; position: relative;
+    font-family: var(--mono); font-size: 25px; line-height: 1.4;
+    padding-left: 30px; position: relative;
   }
   .included li::before { content: '—'; position: absolute; left: 0; color: var(--sand); }
 
   footer {
-    padding: 28px 0 76px;
-    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    padding: 0 0 72px;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
   }
-  .sign { font-family: var(--script); font-size: 52px; line-height: 1; color: var(--linen); }
-  .contact { font-family: var(--mono); font-size: 26px; letter-spacing: 0.06em; color: var(--sand); }
+  .sign { font-family: var(--script); font-size: 36px; line-height: 1; color: var(--linen); }
+  .contact { font-family: var(--mono); font-size: 23px; letter-spacing: 0.06em; color: var(--sand); }
 </style>
 </head>
 <body>
@@ -103,44 +110,59 @@
   </header>
 
   <main>
-    <section>
+    <section class="card">
       <p class="label">Couple</p>
       <h2 class="title">À deux</h2>
       <p class="desc">Votre complicité, votre amour, dans un lieu qui vous ressemble.</p>
       <div class="row">
-        <p class="what">1 heure<span class="detail">30 photos minimum</span></p>
+        <p class="what">1 heure</p>
         <p class="price">350 €</p>
+        <ul class="details">
+          <li>Au moins 30 photos choisies et livrées</li>
+        </ul>
       </div>
       <div class="row">
-        <p class="what">2 heures<span class="detail">60 photos minimum</span></p>
+        <p class="what">2 heures</p>
         <p class="price">450 €</p>
+        <ul class="details">
+          <li>Au moins 60 photos choisies et livrées</li>
+          <li>Un print choisi par mon regard, imprimé et livré</li>
+        </ul>
       </div>
     </section>
 
-    <section>
+    <section class="card">
       <p class="label">Famille</p>
       <h2 class="title">Les vôtres</h2>
       <p class="desc">Les rires, le désordre, la tendresse. Je vous guide, sans rien figer.</p>
       <div class="row">
-        <p class="what">2 heures<span class="detail">60 photos minimum</span></p>
+        <p class="what">2 heures</p>
         <p class="price">500 €</p>
+        <ul class="details">
+          <li>Au moins 60 photos choisies et livrées</li>
+          <li>Un print choisi par mon regard, imprimé et livré</li>
+        </ul>
       </div>
     </section>
 
-    <section>
+    <section class="card">
       <p class="label">Mariage</p>
       <h2 class="title">Pour toujours</h2>
       <p class="desc">Votre journée comme vous la vivez, dans toute sa vérité.</p>
       <div class="row">
-        <p class="what">La journée entière<span class="detail">un print choisi par mon regard</span><span class="detail">livraison sous 6 semaines</span></p>
+        <p class="what">La journée entière</p>
         <p class="price"><small>dès</small>2 200 €</p>
+        <ul class="details">
+          <li>Un print choisi par mon regard, imprimé et livré</li>
+          <li>Livraison sous 6 semaines</li>
+        </ul>
       </div>
     </section>
 
     <section class="included">
       <p class="label">Toujours inclus</p>
       <ul>
-        <li>Un échange en visio, pour poser l'intention</li>
+        <li>Un échange via WhatsApp ou en visio, pour poser l'intention</li>
         <li>Les fichiers en haute résolution</li>
         <li>{{deplacement}}</li>
       </ul>
