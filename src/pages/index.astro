@@ -99,6 +99,75 @@ const tagline = "Quietly observe what matters most";
       <div class="presta-grid">
 
         <article class="presta-card">
+          <h3 class="presta-title">Couple</h3>
+          <p class="presta-desc">
+            Je capture votre moment à deux&nbsp;;<br />
+            votre complicité, votre amour, dans un lieu qui vous ressemble.
+          </p>
+          <p class="presta-section-label">Expérience</p>
+          <ul class="presta-includes">
+            <li>Prise de contact via le formulaire</li>
+            <li>Échange sur WhatsApp</li>
+            <li>Visio rapide pour poser l'intention</li>
+            <li>Puis préparation libre selon vos envies</li>
+          </ul>
+          <p class="presta-section-label">La séance</p>
+          <ul class="presta-includes">
+            <li>Dans un lieu réel&nbsp;: café, appartement, train, etc.</li>
+          </ul>
+          <p class="presta-section-label">Ce que vous recevez</p>
+          <ul class="presta-includes">
+            <li>Fichiers en haute résolution</li>
+          </ul>
+          <div class="presta-offers">
+            <p class="presta-section-label">Formules</p>
+            <div class="presta-formule">
+              <p>1 heure<span class="presta-formule-detail">30 photos minimum</span></p>
+              <p class="presta-formule-price">350 €</p>
+            </div>
+            <div class="presta-formule">
+              <p>2 heures<span class="presta-formule-detail">60 photos minimum</span></p>
+              <p class="presta-formule-price">450 €</p>
+            </div>
+            <span class="presta-price-note">Déplacement offert jusqu'à 40&nbsp;km, puis 0,60&nbsp;€/km.</span>
+          </div>
+          <a href="#contact" class="btn">Me contacter</a>
+        </article>
+
+        <article class="presta-card">
+          <h3 class="presta-title">Famille</h3>
+          <p class="presta-desc">
+            Je capture votre famille telle qu'elle est&nbsp;;<br />
+            les rires, le désordre, la tendresse.
+          </p>
+          <p class="presta-section-label">Expérience</p>
+          <ul class="presta-includes">
+            <li>Prise de contact via le formulaire</li>
+            <li>Échange sur WhatsApp</li>
+            <li>Visio rapide pour poser l'intention</li>
+            <li>Puis préparation libre selon vos envies</li>
+          </ul>
+          <p class="presta-section-label">La séance</p>
+          <ul class="presta-includes">
+            <li>Chez vous ou dans un lieu qui vous ressemble</li>
+            <li>Je vous guide, sans rien figer</li>
+          </ul>
+          <p class="presta-section-label">Ce que vous recevez</p>
+          <ul class="presta-includes">
+            <li>Fichiers en haute résolution</li>
+          </ul>
+          <div class="presta-offers">
+            <p class="presta-section-label">Formule</p>
+            <div class="presta-formule">
+              <p>2 heures<span class="presta-formule-detail">80 photos minimum</span></p>
+              <p class="presta-formule-price">600 €</p>
+            </div>
+            <span class="presta-price-note">Déplacement offert jusqu'à 40&nbsp;km, puis 0,60&nbsp;€/km.</span>
+          </div>
+          <a href="#contact" class="btn">Me contacter</a>
+        </article>
+
+        <article class="presta-card">
           <h3 class="presta-title">Mariage</h3>
           <p class="presta-desc">
             Je capture votre journée comme vous la vivez&nbsp;;<br />
@@ -120,37 +189,7 @@ const tagline = "Quietly observe what matters most";
           </ul>
           <p class="presta-price">
             À partir de 2 200 €
-            <span class="presta-price-note">Frais de déplacement et hébergement en supplément si nécessaire.</span>
-          </p>
-          <a href="#contact" class="btn">Me contacter</a>
-        </article>
-
-        <article class="presta-card">
-          <h3 class="presta-title">Couple</h3>
-          <p class="presta-desc">
-            Je capture votre moment à deux&nbsp;;<br />
-            votre complicité, votre amour, dans un lieu qui vous ressemble.
-          </p>
-          <p class="presta-section-label">Expérience</p>
-          <ul class="presta-includes">
-            <li>Prise de contact via le formulaire</li>
-            <li>Échange sur WhatsApp</li>
-            <li>Visio rapide pour poser l'intention</li>
-            <li>Puis préparation libre selon vos envies</li>
-          </ul>
-          <p class="presta-section-label">La séance</p>
-          <ul class="presta-includes">
-            <li>1h30 à 2h</li>
-            <li>Dans un lieu réel&nbsp;: café, appartement, train, etc.</li>
-          </ul>
-          <p class="presta-section-label">Ce que vous recevez</p>
-          <ul class="presta-includes">
-            <li>Fichiers en haute résolution</li>
-            <li>Livraison sous 6 semaines</li>
-          </ul>
-          <p class="presta-price">
-            À partir de 500 €
-            <span class="presta-price-note">Frais de déplacement et hébergement en supplément si nécessaire.</span>
+            <span class="presta-price-note">Déplacement offert jusqu'à 40&nbsp;km, puis 0,60&nbsp;€/km. Hébergement en supplément si nécessaire.</span>
           </p>
           <a href="#contact" class="btn">Me contacter</a>
         </article>
@@ -226,9 +265,10 @@ const tagline = "Quietly observe what matters most";
             <div class="field">
               <label for="project">Projet</label>
               <select id="project" name="project" required>
-                <option value="" disabled selected>Mariage ou couple&nbsp;?</option>
-                <option value="mariage">Mariage</option>
+                <option value="" disabled selected>Couple, famille ou mariage&nbsp;?</option>
                 <option value="couple">Couple</option>
+                <option value="famille">Famille</option>
+                <option value="mariage">Mariage</option>
               </select>
             </div>
           </div>

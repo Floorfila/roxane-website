@@ -223,16 +223,21 @@ svg { display: block; }
 .gallery-ph-3, .gallery-ph-4, .gallery-ph-8 { background: var(--violet);   color: var(--lavender); }
 
 /* ── PRESTATIONS ── bande Beige Sand, cartes Soft Linen */
-#prestations { background: var(--sand); }
+#prestations, #services { background: var(--sand); }
 .presta-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 .presta-card {
   background: var(--linen);
-  padding: 3rem;
+  padding: 2.75rem 2.5rem;
   display: flex; flex-direction: column; gap: 1.5rem;
+}
+/* Entre tablette et grand écran : 2 colonnes, le mariage pleine largeur en dessous */
+@media (max-width: 1200px) {
+  .presta-grid { grid-template-columns: 1fr 1fr; }
+  .presta-card:last-child { grid-column: 1 / -1; }
 }
 .presta-title {
   font-family: var(--sans);
@@ -279,6 +284,26 @@ svg { display: block; }
   letter-spacing: 0.01em;
   color: var(--muted); margin-top: 0.25rem;
 }
+/* Formules couple : durée et nombre de photos à gauche, prix à droite */
+.presta-offers {
+  margin-top: auto;
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.presta-formule {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  font-size: 1rem; font-weight: 400;
+  letter-spacing: 0.06em; color: var(--ink);
+}
+.presta-formule-detail {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.85rem; font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+.presta-formule-price { white-space: nowrap; }
 
 /* ── ABOUT ── */
 .about-grid {
