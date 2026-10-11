@@ -1,0 +1,148 @@
+<!doctype html>
+<!-- Grille tarifaire Eterna, format story 1080 × 1920 à envoyer en message.
+     {{logo}} (src/assets/eterna-logo.svg) et {{deplacement}} sont injectés par build.py. -->
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Eterna — Tarifs</title>
+<style>
+  @font-face { font-family: 'Poppins'; font-weight: 300; src: url('/public/fonts/Poppins-Light.woff2') format('woff2'); }
+  @font-face { font-family: 'Poppins'; font-weight: 400; src: url('/public/fonts/Poppins-Regular.woff2') format('woff2'); }
+  @font-face { font-family: 'Lekton'; font-weight: 400; src: url('/public/fonts/Lekton-Regular.woff2') format('woff2'); }
+  @font-face { font-family: 'Palmera Dirham'; font-weight: 400; src: url('/public/fonts/PalmeraDirham.woff2') format('woff2'); }
+
+  @page { size: 1080px 1920px; margin: 0; }
+
+  :root {
+    --violet:   #160910;
+    --bordeaux: #4A0C15;
+    --lavender: #715B6E;
+    --sand:     #B1A594;
+    --linen:    #EAE3D2;
+    --border:   rgba(22, 9, 16, 0.16);
+    --sans:   'Poppins', sans-serif;
+    --mono:   'Lekton', monospace;
+    --script: 'Palmera Dirham', cursive;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; }
+  body {
+    background: var(--linen); color: var(--violet);
+    font-family: var(--sans); font-weight: 300;
+    display: flex; flex-direction: column;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* En-tête Dark Violet, logo Soft Linen */
+  header {
+    background: var(--violet); color: var(--linen);
+    height: 380px; flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .logo svg { width: 540px; height: auto; display: block; }
+  .byline { font-family: var(--script); font-size: 58px; line-height: 1; color: var(--sand); margin-top: 22px; }
+  .kicker {
+    font-family: var(--mono); font-size: 24px; letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--lavender); margin-top: 26px;
+  }
+
+  main { flex: 1; padding: 22px 96px 0; display: flex; flex-direction: column; }
+  .block { padding: 24px 0 28px; border-bottom: 1px solid var(--border); }
+  .label {
+    font-family: var(--mono); font-size: 24px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--bordeaux);
+  }
+  .title {
+    font-size: 52px; font-weight: 300; line-height: 1.15;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px;
+  }
+  .desc { font-size: 27px; line-height: 1.5; color: var(--lavender); margin-top: 6px; }
+
+  .row {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 32px;
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border);
+  }
+  .what { font-size: 36px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.3; }
+  .detail {
+    display: block; font-family: var(--mono); font-size: 27px; letter-spacing: 0.02em;
+    color: var(--lavender); line-height: 1.4; margin-top: 2px;
+  }
+  .price { font-size: 42px; font-weight: 400; letter-spacing: 0.04em; white-space: nowrap; }
+  .price small { font-size: 27px; font-weight: 300; letter-spacing: 0.02em; color: var(--lavender); margin-right: 10px; }
+
+  .included { padding: 24px 0 0; }
+  .included ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+  .included li {
+    font-family: var(--mono); font-size: 28px; line-height: 1.35;
+    padding-left: 34px; position: relative;
+  }
+  .included li::before { content: '—'; position: absolute; left: 0; color: var(--bordeaux); }
+
+  /* Pied Night Bordeaux, texte Beige Sand */
+  footer {
+    background: var(--bordeaux); color: var(--sand);
+    height: 180px; flex-shrink: 0; margin-top: 24px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+  }
+  .sign { font-family: var(--script); font-size: 54px; line-height: 1; color: var(--linen); }
+  .contact { font-family: var(--mono); font-size: 27px; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">{{logo}}</div>
+    <p class="byline">by Roxane</p>
+    <p class="kicker">Tarifs 2026</p>
+  </header>
+
+  <main>
+    <section class="block">
+      <p class="label">Couple</p>
+      <h2 class="title">À deux</h2>
+      <p class="desc">Votre complicité, votre amour, dans un lieu qui vous ressemble.</p>
+      <div class="row">
+        <p class="what">1 heure<span class="detail">30 photos minimum</span></p>
+        <p class="price">350 €</p>
+      </div>
+      <div class="row">
+        <p class="what">2 heures<span class="detail">60 photos minimum</span></p>
+        <p class="price">450 €</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <p class="label">Famille</p>
+      <h2 class="title">Les vôtres</h2>
+      <p class="desc">Les rires, le désordre, la tendresse. Je vous guide, sans rien figer.</p>
+      <div class="row">
+        <p class="what">2 heures<span class="detail">80 photos minimum</span></p>
+        <p class="price">600 €</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <p class="label">Mariage</p>
+      <h2 class="title">Pour toujours</h2>
+      <p class="desc">Votre journée comme vous la vivez, dans toute sa vérité.</p>
+      <div class="row">
+        <p class="what">La journée entière<span class="detail">un print choisi par mon regard</span><span class="detail">livraison sous 6 semaines</span></p>
+        <p class="price"><small>dès</small>2 200 €</p>
+      </div>
+    </section>
+
+    <section class="included">
+      <p class="label">Toujours inclus</p>
+      <ul>
+        <li>Un échange en visio, pour poser l'intention</li>
+        <li>Les fichiers en haute résolution</li>
+        <li>{{deplacement}}</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p class="sign">À très vite, Roxane</p>
+    <p class="contact">eterna-photo.com · @eterna.art.photography</p>
+  </footer>
+</body>
+</html>
