@@ -1,5 +1,6 @@
 <!doctype html>
 <!-- Grille tarifaire Eterna, format story 1080 × 1920 à envoyer en message.
+     Un seul fond Soft Linen fondu vers Beige Sand, sans bandeaux ; logo Dark Violet (charte : sur Soft Linen).
      {{logo}} (src/assets/eterna-logo.svg) et {{deplacement}} sont injectés par build.py. -->
 <html lang="fr">
 <head>
@@ -19,7 +20,7 @@
     --lavender: #715B6E;
     --sand:     #B1A594;
     --linen:    #EAE3D2;
-    --border:   rgba(22, 9, 16, 0.16);
+    --border:   rgba(22, 9, 16, 0.13);
     --sans:   'Poppins', sans-serif;
     --mono:   'Lekton', monospace;
     --script: 'Palmera Dirham', cursive;
@@ -27,34 +28,44 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1080px; height: 1920px; }
   body {
-    background: var(--linen); color: var(--violet);
+    color: var(--violet);
     font-family: var(--sans); font-weight: 300;
     display: flex; flex-direction: column;
+    background:
+      radial-gradient(70% 38% at 50% 0%, var(--linen) 0%, transparent 100%),
+      linear-gradient(180deg,
+        var(--linen) 0%,
+        var(--linen) 35%,
+        color-mix(in srgb, var(--linen) 82%, var(--sand)) 70%,
+        color-mix(in srgb, var(--linen) 60%, var(--sand)) 100%);
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
 
-  /* En-tête Dark Violet, logo Soft Linen */
   header {
-    background: var(--violet); color: var(--linen);
-    height: 380px; flex-shrink: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding-top: 92px;
+    display: flex; flex-direction: column; align-items: center;
   }
-  .logo svg { width: 540px; height: auto; display: block; }
-  .byline { font-family: var(--script); font-size: 58px; line-height: 1; color: var(--sand); margin-top: 22px; }
+  .logo { color: var(--violet); }
+  .logo svg { width: 460px; height: auto; display: block; }
+  .byline { font-family: var(--script); font-size: 54px; line-height: 1; color: var(--bordeaux); margin-top: 20px; }
   .kicker {
-    font-family: var(--mono); font-size: 24px; letter-spacing: 0.42em; text-transform: uppercase;
-    color: var(--lavender); margin-top: 26px;
+    display: flex; align-items: center; gap: 24px;
+    font-family: var(--mono); font-size: 23px; letter-spacing: 0.44em; text-transform: uppercase;
+    color: var(--lavender); margin-top: 30px;
   }
+  .kicker::before, .kicker::after { content: ''; width: 72px; height: 1px; background: currentColor; opacity: 0.5; }
 
-  main { flex: 1; padding: 22px 96px 0; display: flex; flex-direction: column; }
-  .block { padding: 24px 0 28px; border-bottom: 1px solid var(--border); }
+  main {
+    flex: 1; padding: 20px 104px 0;
+    display: flex; flex-direction: column; justify-content: space-evenly;
+  }
   .label {
-    font-family: var(--mono); font-size: 24px; letter-spacing: 0.32em; text-transform: uppercase;
+    font-family: var(--mono); font-size: 23px; letter-spacing: 0.32em; text-transform: uppercase;
     color: var(--bordeaux);
   }
   .title {
     font-size: 52px; font-weight: 300; line-height: 1.15;
-    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px;
   }
   .desc { font-size: 27px; line-height: 1.5; color: var(--lavender); margin-top: 6px; }
 
@@ -70,7 +81,6 @@
   .price { font-size: 42px; font-weight: 400; letter-spacing: 0.04em; white-space: nowrap; }
   .price small { font-size: 27px; font-weight: 300; letter-spacing: 0.02em; color: var(--lavender); margin-right: 10px; }
 
-  .included { padding: 24px 0 0; }
   .included ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
   .included li {
     font-family: var(--mono); font-size: 28px; line-height: 1.35;
@@ -78,14 +88,12 @@
   }
   .included li::before { content: '—'; position: absolute; left: 0; color: var(--bordeaux); }
 
-  /* Pied Night Bordeaux, texte Beige Sand */
   footer {
-    background: var(--bordeaux); color: var(--sand);
-    height: 180px; flex-shrink: 0; margin-top: 24px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+    padding: 28px 0 76px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
   }
-  .sign { font-family: var(--script); font-size: 54px; line-height: 1; color: var(--linen); }
-  .contact { font-family: var(--mono); font-size: 27px; letter-spacing: 0.06em; }
+  .sign { font-family: var(--script); font-size: 52px; line-height: 1; color: var(--bordeaux); }
+  .contact { font-family: var(--mono); font-size: 26px; letter-spacing: 0.06em; color: var(--lavender); }
 </style>
 </head>
 <body>
@@ -96,7 +104,7 @@
   </header>
 
   <main>
-    <section class="block">
+    <section>
       <p class="label">Couple</p>
       <h2 class="title">À deux</h2>
       <p class="desc">Votre complicité, votre amour, dans un lieu qui vous ressemble.</p>
@@ -110,17 +118,17 @@
       </div>
     </section>
 
-    <section class="block">
+    <section>
       <p class="label">Famille</p>
       <h2 class="title">Les vôtres</h2>
       <p class="desc">Les rires, le désordre, la tendresse. Je vous guide, sans rien figer.</p>
       <div class="row">
-        <p class="what">2 heures<span class="detail">80 photos minimum</span></p>
-        <p class="price">600 €</p>
+        <p class="what">2 heures<span class="detail">60 photos minimum</span></p>
+        <p class="price">500 €</p>
       </div>
     </section>
 
-    <section class="block">
+    <section>
       <p class="label">Mariage</p>
       <h2 class="title">Pour toujours</h2>
       <p class="desc">Votre journée comme vous la vivez, dans toute sa vérité.</p>
