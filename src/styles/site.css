@@ -354,10 +354,10 @@ svg { display: block; }
   color: var(--ink); line-height: 1.35;
   margin-top: 0.4rem;
 }
-/* Logo eterna (wordmark) sous la signature, à la demande de Roxane (11 octobre 2026) */
+/* Logomark (celui du menu mobile) sous la signature, à la demande de Roxane (11 octobre 2026) */
 .about-sign-mark {
   display: block;
-  width: 150px;
+  width: 72px;
   margin-top: 0.9rem;
   color: var(--bordeaux);
 }
@@ -365,7 +365,18 @@ svg { display: block; }
 .about-text .btn { align-self: flex-start; margin-top: 0.5rem; }
 
 /* ── CONTACT ── */
-.contact-wrap { max-width: 640px; }
+.contact-wrap { max-width: 640px; position: relative; z-index: 1; }
+/* Logomark Night Bordeaux dans le vide à droite du formulaire, coupé par le bord droit comme le menu mobile */
+#contact { position: relative; overflow: hidden; }
+.contact-mark {
+  position: absolute;
+  right: -7vw; bottom: 4rem;
+  width: min(34vw, 500px);
+  color: var(--bordeaux);
+  pointer-events: none;
+}
+.contact-mark svg { width: 100%; height: auto; }
+@media (max-width: 1100px) { .contact-mark { display: none; } }
 form {
   display: flex; flex-direction: column; gap: 1.6rem;
   margin-top: 2.5rem;

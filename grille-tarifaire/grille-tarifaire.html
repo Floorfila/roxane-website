@@ -2,7 +2,7 @@
 <!-- Grille tarifaire Eterna, format story 1080 × 1920 à envoyer en message.
      Fond Night Bordeaux fondu ; chaque prestation dans un cadre Soft Linen translucide ;
      logo Beige Sand (charte : sur Night Bordeaux), textes Soft Linen.
-     {{logo}} (src/assets/eterna-logo.svg) et {{deplacement}} sont injectés par build.py. -->
+     {{logo}}, {{logomark}} (src/assets) et {{deplacement}} sont injectés par build.py. -->
 <html lang="fr">
 <head>
 <meta charset="utf-8" />
@@ -30,6 +30,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 1080px; height: 1920px; }
   body {
+    position: relative; overflow: hidden;
     color: var(--linen);
     font-family: var(--sans); font-weight: 300;
     display: flex; flex-direction: column;
@@ -41,6 +42,14 @@
         color-mix(in srgb, var(--bordeaux) 70%, var(--violet)) 100%);
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
+
+  /* Logomark crème coupé en bas à droite, en rappel du menu mobile du site */
+  .mark {
+    position: absolute; right: -150px; bottom: -110px;
+    width: 600px; color: var(--linen); opacity: 0.1;
+  }
+  .mark svg { width: 100%; height: auto; display: block; }
+  header, main, footer { position: relative; z-index: 1; }
 
   header {
     padding-top: 92px;
@@ -103,6 +112,7 @@
 </style>
 </head>
 <body>
+  <div class="mark">{{logomark}}</div>
   <header>
     <div class="logo">{{logo}}</div>
     <p class="byline">by Roxane</p>
@@ -118,15 +128,15 @@
         <p class="what">1 heure</p>
         <p class="price">350 €</p>
         <ul class="details">
-          <li>Au moins 30 photos choisies et livrées</li>
+          <li>30 photos minimum choisies et livrées</li>
         </ul>
       </div>
       <div class="row">
         <p class="what">2 heures</p>
         <p class="price">450 €</p>
         <ul class="details">
-          <li>Au moins 60 photos choisies et livrées</li>
-          <li>Un print choisi par mon regard, imprimé et livré</li>
+          <li>60 photos minimum choisies et livrées</li>
+          <li>Un print choisi par mon regard, imprimé</li>
         </ul>
       </div>
     </section>
@@ -139,8 +149,8 @@
         <p class="what">2 heures</p>
         <p class="price">500 €</p>
         <ul class="details">
-          <li>Au moins 60 photos choisies et livrées</li>
-          <li>Un print choisi par mon regard, imprimé et livré</li>
+          <li>60 photos minimum choisies et livrées</li>
+          <li>Un print choisi par mon regard, imprimé</li>
         </ul>
       </div>
     </section>
@@ -153,7 +163,7 @@
         <p class="what">La journée entière</p>
         <p class="price"><small>dès</small>2 200 €</p>
         <ul class="details">
-          <li>Un print choisi par mon regard, imprimé et livré</li>
+          <li>Un print choisi par mon regard, imprimé</li>
           <li>Livraison sous 6 semaines</li>
         </ul>
       </div>
@@ -163,7 +173,7 @@
       <p class="label">Toujours inclus</p>
       <ul>
         <li>Un échange via WhatsApp ou en visio, pour poser l'intention</li>
-        <li>Les fichiers en haute résolution</li>
+        <li>Les fichiers en haute résolution, sur une galerie privée</li>
         <li>{{deplacement}}</li>
       </ul>
     </section>

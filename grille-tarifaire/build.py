@@ -20,6 +20,7 @@ DEPLACEMENT = "Le déplacement, offert jusqu'à 40 km"
 def render_html():
     html = (HERE / "grille-tarifaire.html").read_text()
     html = html.replace("{{logo}}", (ROOT / "src/assets/eterna-logo.svg").read_text())
+    html = html.replace("{{logomark}}", (ROOT / "src/assets/eterna-logomark.svg").read_text())
     html = html.replace("{{deplacement}}", DEPLACEMENT)
     out = HERE / "build.html"
     out.write_text(html)
