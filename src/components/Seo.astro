@@ -1,0 +1,118 @@
+---
+// Balises de référencement communes aux pages FR et EN : titre, description, canonical,
+// versions de langue (hreflang), aperçu de partage (Open Graph) et données structurées (schema.org).
+interface Props {
+  lang: 'fr' | 'en';
+  title: string;
+  description: string;
+  path: string;        // chemin de cette page, ex. "/" ou "/en/"
+  alternates: { fr: string; en: string };
+}
+
+const { lang, title, description, path, alternates } = Astro.props;
+const site = 'https://eterna-photo.com';
+const url = new URL(path, site).href;
+const image = `${site}/og-eterna.png`;
+const fr = lang === 'fr';
+
+const areaServed = [
+  { '@type': 'Country', name: 'Monaco' },
+  ...['Menton', 'Roquebrune-Cap-Martin', 'Beausoleil', "Cap-d'Ail", 'Èze', 'Villefranche-sur-Mer', 'Nice']
+    .map((name) => ({ '@type': 'City', name })),
+  { '@type': 'AdministrativeArea', name: fr ? "Côte d'Azur" : 'French Riviera' },
+  { '@type': 'AdministrativeArea', name: fr ? 'Riviera italienne' : 'Italian Riviera' },
+];
+
+// Prestations et prix tels qu'ils sont publiés sur la page (section Prestations / Services).
+const offer = (name: string, desc: string, price: number, from = false) => ({
+  '@type': 'Offer',
+  itemOffered: { '@type': 'Service', name, description: desc, serviceType: name },
+  priceCurrency: 'EUR',
+  ...(from
+    ? { priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'EUR', minPrice: price } }
+    : { price }),
+  areaServed: fr ? "Côte d'Azur" : 'French Riviera',
+});
+const offers = fr
+  ? [
+      offer('Séance couple — 1 heure', '30 photos minimum choisies et livrées, galerie privée.', 350),
+      offer('Séance couple — 2 heures', '60 photos minimum choisies et livrées, un cliché imprimé.', 450),
+      offer('Séance famille — 2 heures', '60 photos minimum choisies et livrées, un cliché imprimé.', 500),
+      offer('Reportage de mariage', 'Reportage complet de la journée, galerie privée, livraison sous 6 à 8 semaines, un cliché imprimé.', 2200, true),
+    ]
+  : [
+      offer('Couple session — 1 hour', '30 photos minimum, chosen and delivered, in a private gallery.', 350),
+      offer('Couple session — 2 hours', '60 photos minimum, chosen and delivered, one printed photograph.', 450),
+      offer('Family session — 2 hours', '60 photos minimum, chosen and delivered, one printed photograph.', 500),
+      offer('Wedding photography', 'Full-day coverage, private gallery, delivery within 6 to 8 weeks, one printed photograph.', 2200, true),
+    ];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite', '@id': `${site}/#website`, url: `${site}/`, name: 'Eterna',
+      inLanguage: ['fr', 'en'], publisher: { '@id': `${site}/#business` },
+    },
+    {
+      '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title, description,
+      inLanguage: lang, isPartOf: { '@id': `${site}/#website` }, about: { '@id': `${site}/#business` },
+      primaryImageOfPage: image,
+    },
+    {
+      '@type': 'ProfessionalService', '@id': `${site}/#business`,
+      name: 'Eterna',
+      alternateName: 'Eterna by Roxane',
+      slogan: 'Quietly observe what matters most',
+      description: fr
+        ? "Photographe de mariage, de couple et de famille basée sur la Côte d'Azur, entre Monaco et Menton. Reportage documentaire, discret, inspiré de la pellicule."
+        : 'Wedding, couple and family photographer based on the French Riviera, between Monaco and Menton. Documentary, discreet, film-inspired photography.',
+      url,
+      logo: `${site}/apple-touch-icon.png`,
+      image,
+      priceRange: '350 € – 2 200 €+',
+      currenciesAccepted: 'EUR',
+      address: { '@type': 'PostalAddress', addressRegion: "Provence-Alpes-Côte d'Azur", addressCountry: 'FR' },
+      areaServed,
+      knowsLanguage: ['fr', 'en'],
+      founder: {
+        '@type': 'Person', '@id': `${site}/#roxane`, name: 'Roxane',
+        jobTitle: fr ? 'Photographe' : 'Photographer', knowsLanguage: ['fr', 'en'],
+      },
+      sameAs: ['https://www.instagram.com/eterna.art.photography/'],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: fr ? 'Prestations' : 'Services',
+        itemListElement: offers,
+      },
+    },
+  ],
+};
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+<link rel="alternate" hreflang="fr" href={new URL(alternates.fr, site).href} />
+<link rel="alternate" hreflang="en" href={new URL(alternates.en, site).href} />
+<link rel="alternate" hreflang="x-default" href={new URL(alternates.en, site).href} />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Eterna" />
+<meta property="og:locale" content={fr ? 'fr_FR' : 'en_GB'} />
+<meta property="og:locale:alternate" content={fr ? 'en_GB' : 'fr_FR'} />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Eterna — Quietly observe what matters most" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

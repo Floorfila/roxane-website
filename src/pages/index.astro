@@ -3,6 +3,7 @@ import '../styles/site.css';
 import logo from '../assets/eterna-logo.svg?raw';
 import wordmark from '../assets/eterna-wordmark.svg?raw';
 import logomark from '../assets/eterna-logomark.svg?raw';
+import Seo from '../components/Seo.astro';
 const brand = "Eterna";
 const tagline = "Quietly observe what matters most";
 ---
@@ -17,12 +18,13 @@ const tagline = "Quietly observe what matters most";
     <meta name="theme-color" content="#160910" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Eterna — Photographie de mariage et de couple. L'instant préservé pour toujours."
+    <Seo
+      lang="fr"
+      path="/"
+      alternates={{ fr: '/', en: '/en/' }}
+      title="Photographe mariage Monaco, Menton & Côte d'Azur | Eterna"
+      description="Roxane, photographe de mariage, couple et famille à Monaco, Menton et sur la Côte d'Azur. Reportage documentaire et discret. Mariage dès 2 200 €."
     />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <title>{brand} — Photographie de mariage et de couple</title>
     <link rel="preload" href="/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Lekton-Regular.woff2" as="font" type="font/woff2" crossorigin />
   </head>

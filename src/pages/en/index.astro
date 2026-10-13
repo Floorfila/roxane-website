@@ -3,6 +3,7 @@ import '../../styles/site.css';
 import logo from '../../assets/eterna-logo.svg?raw';
 import wordmark from '../../assets/eterna-wordmark.svg?raw';
 import logomark from '../../assets/eterna-logomark.svg?raw';
+import Seo from '../../components/Seo.astro';
 const brand = "Eterna";
 const tagline = "Quietly observe what matters most";
 ---
@@ -17,12 +18,13 @@ const tagline = "Quietly observe what matters most";
     <meta name="theme-color" content="#160910" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Eterna — Wedding & couple photography by Roxane. Every moment, preserved forever."
+    <Seo
+      lang="en"
+      path="/en/"
+      alternates={{ fr: '/', en: '/en/' }}
+      title="Wedding Photographer in Monaco & the French Riviera | Eterna"
+      description="Roxane, documentary wedding, couple and family photographer in Monaco, Menton and on the French Riviera. Discreet, film-inspired. Weddings from 2,200 €."
     />
-    <link rel="alternate" hreflang="fr" href="/" />
-    <title>{brand} — Wedding &amp; Couple Photography</title>
     <link rel="preload" href="/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Lekton-Regular.woff2" as="font" type="font/woff2" crossorigin />
   </head>
