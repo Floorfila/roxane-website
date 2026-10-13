@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# SEO agent workspace: strategy, reports and data stay on the Mac mini (this repository is public)
+seo/
+CLAUDE.local.md
