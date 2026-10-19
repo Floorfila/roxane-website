@@ -161,6 +161,7 @@ svg { display: block; }
 }
 .hero-specialty {
   font-family: var(--mono);
+  font-weight: inherit;
   font-size: 0.8rem;
   letter-spacing: 0.26em; text-transform: uppercase;
   color: rgba(234, 227, 210, 0.55);

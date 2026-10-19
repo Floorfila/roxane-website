@@ -22,8 +22,8 @@ const tagline = "Quietly observe what matters most";
       lang="fr"
       path="/"
       alternates={{ fr: '/', en: '/en/' }}
-      title="Photographe mariage Monaco, Menton & Côte d'Azur | Eterna"
-      description="Roxane, photographe de mariage, couple et famille à Monaco, Menton et sur la Côte d'Azur. Reportage documentaire et discret. Mariage dès 2 200 €."
+      title="Photographe mariage Monaco, Nice & Menton | Eterna"
+      description="Roxane, photographe de mariage, couple et famille à Monaco, Nice, Menton et sur la Côte d'Azur. Reportage documentaire et discret. Mariage dès 2 200 €."
     />
     <link rel="preload" href="/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Lekton-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -72,9 +72,9 @@ const tagline = "Quietly observe what matters most";
       <div class="hero-img" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="hero-brand"><span class="sr-only">{brand}. {tagline}.</span><Fragment set:html={logo} /></h1>
+        <div class="hero-brand"><span class="sr-only">{brand}. {tagline}.</span><Fragment set:html={logo} /></div>
         <p class="hero-byline">by Roxane</p>
-        <p class="hero-specialty">Photographie de mariage, couple et famille<br />Monaco · Menton · Côte d'Azur</p>
+        <h1 class="hero-specialty">Photographie de mariage, couple et famille<br />Monaco · Menton · Côte d'Azur</h1>
       </div>
     </section>
 

@@ -17,7 +17,8 @@ const fr = lang === 'fr';
 
 const areaServed = [
   { '@type': 'Country', name: 'Monaco' },
-  ...['Menton', 'Roquebrune-Cap-Martin', 'Beausoleil', "Cap-d'Ail", 'Èze', 'Villefranche-sur-Mer', 'Nice']
+  ...['Nice', 'Menton', 'Roquebrune-Cap-Martin', 'Beausoleil', "Cap-d'Ail", 'Èze', 'Villefranche-sur-Mer',
+    'Saint-Jean-Cap-Ferrat', 'Cagnes-sur-Mer', 'Saint-Laurent-du-Var']
     .map((name) => ({ '@type': 'City', name })),
   { '@type': 'AdministrativeArea', name: fr ? "Côte d'Azur" : 'French Riviera' },
   { '@type': 'AdministrativeArea', name: fr ? 'Riviera italienne' : 'Italian Riviera' },

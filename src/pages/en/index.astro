@@ -22,8 +22,8 @@ const tagline = "Quietly observe what matters most";
       lang="en"
       path="/en/"
       alternates={{ fr: '/', en: '/en/' }}
-      title="Wedding Photographer in Monaco & the French Riviera | Eterna"
-      description="Roxane, documentary wedding, couple and family photographer in Monaco, Menton and on the French Riviera. Discreet, film-inspired. Weddings from 2,200 €."
+      title="Wedding Photographer in Monaco, Nice & Menton | Eterna"
+      description="Roxane, documentary wedding, couple and family photographer in Monaco, Nice, Menton and on the French Riviera. Discreet, film-inspired. Weddings from 2,200 €."
     />
     <link rel="preload" href="/fonts/Poppins-Light.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Lekton-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -72,9 +72,9 @@ const tagline = "Quietly observe what matters most";
       <div class="hero-img" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
-        <h1 class="hero-brand"><span class="sr-only">{brand}. {tagline}.</span><Fragment set:html={logo} /></h1>
+        <div class="hero-brand"><span class="sr-only">{brand}. {tagline}.</span><Fragment set:html={logo} /></div>
         <p class="hero-byline">by Roxane</p>
-        <p class="hero-specialty">Wedding, Couple &amp; Family Photography<br />Monaco · Menton · French Riviera</p>
+        <h1 class="hero-specialty">Wedding, Couple &amp; Family Photography<br />Monaco · Menton · French Riviera</h1>
       </div>
     </section>
 
