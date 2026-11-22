@@ -52,7 +52,7 @@ const tagline = "Quietly observe what matters most";
     </header>
 
     <!-- MENU MOBILE -->
-    <div class="nav-mobile" id="mobile-menu" aria-hidden="true">
+    <div class="nav-mobile" id="mobile-menu" aria-hidden="true" inert>
       <span class="nav-mobile-mark" aria-hidden="true"><Fragment set:html={logomark} /></span>
       <nav class="mobile-links">
         <a href="#portfolio">Portfolio</a>
@@ -326,6 +326,7 @@ const tagline = "Quietly observe what matters most";
           mobileMenu.classList.toggle('open', open);
           mobileBtn.setAttribute('aria-expanded', String(open));
           mobileMenu.setAttribute('aria-hidden', String(!open));
+          mobileMenu.inert = !open;
           document.body.style.overflow = open ? 'hidden' : '';
         }
         mobileBtn.addEventListener('click', () => toggleMenu(!mobileMenu.classList.contains('open')));
