@@ -40,10 +40,10 @@ const tagline = "Quietly observe what matters most";
           <a href="#about">À propos</a>
           <a href="#contact">Contact</a>
         </nav>
-        <div class="lang-switch" aria-label="Langue">
+        <div class="lang-switch" role="group" aria-label="Langue">
           <span class="lang-link lang-active" aria-current="true">FR</span>
           <span class="lang-dot" aria-hidden="true">·</span>
-          <a href="/en/" class="lang-link">EN</a>
+          <a href="/en/" class="lang-link" hreflang="en" lang="en">EN</a>
         </div>
       </div>
       <button class="nav-mobile-btn" id="mobile-btn" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -63,7 +63,7 @@ const tagline = "Quietly observe what matters most";
       <div class="mobile-lang">
         <span class="lang-link lang-active">FR</span>
         <span class="lang-dot" aria-hidden="true">·</span>
-        <a href="/en/" class="lang-link">EN</a>
+        <a href="/en/" class="lang-link" hreflang="en" lang="en">EN</a>
       </div>
     </div>
 
@@ -247,7 +247,7 @@ const tagline = "Quietly observe what matters most";
           netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="contact" />
-          <p class="sr-only"><label>Ne pas remplir&nbsp;: <input name="bot-field" /></label></p>
+          <p class="sr-only"><label>Ne pas remplir&nbsp;: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
           <div class="form-row">
             <div class="field">
